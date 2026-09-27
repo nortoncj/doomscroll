@@ -1,0 +1,25 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+*.tfvars
+!example.tfvars
+
+# Lambda build artifacts (archive_file output)
+build/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Secrets and local env
+.env
+.env.*
+
+# OS junk
+.DS_Store
