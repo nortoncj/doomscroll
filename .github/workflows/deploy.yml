@@ -1,0 +1,68 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+# Never cancel a deploy halfway through. Queue them instead.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: us-east-1
+  ROLE_ARN: arn:aws:iam::205207086306:role/ci-doomscroll-apply
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "^1.11.0"
+          terraform_wrapper: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install checkov and pytest
+        run: pip install checkov pytest
+
+      - name: Assume ci-doomscroll-apply via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: terraform fmt
+        run: terraform fmt -check -recursive infra
+
+      - name: terraform init
+        working-directory: infra/app
+        run: terraform init -input=false
+
+      - name: terraform validate
+        working-directory: infra/app
+        run: terraform validate
+
+      - name: checkov
+        run: checkov -d infra --compact
+
+      - name: pytest
+        run: pytest || [ $? -eq 5 ]
+
+      # Save the plan, then apply exactly that plan. Same habit you used locally.
+      - name: terraform plan
+        working-directory: infra/app
+        run: terraform plan -input=false -no-color -out=tfplan
+
+      - name: terraform apply
+        working-directory: infra/app
+        run: terraform apply -input=false tfplan

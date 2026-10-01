@@ -12,11 +12,11 @@
 ###############################################################################
 
 terraform {
-   backend "s3" {
-     bucket       = "doomscroll-tfstate-205207086306"
-     key          = "bootstrap/terraform.tfstate"
-     region       = "us-east-1"
-     encrypt      = true
-     use_lockfile = true
-   }
- }
+  backend "s3" {
+    bucket       = "doomscroll-tfstate-205207086306"
+    key          = "bootstrap/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true
+  }
+}

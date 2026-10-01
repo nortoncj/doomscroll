@@ -1,0 +1,67 @@
+name: PR checks
+
+on:
+  pull_request:
+    branches: [main]
+
+# id-token: write is what lets the workflow request the OIDC token from GitHub.
+# Without it, the AWS login step fails.
+permissions:
+  id-token: write
+  contents: read
+
+# New push to the same PR cancels the old run. No point planning stale code.
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  AWS_REGION: us-east-1
+  ROLE_ARN: arn:aws:iam::205207086306:role/ci-doomscroll-plan
+
+jobs:
+  terraform-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "^1.11.0"
+          terraform_wrapper: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install checkov and pytest
+        run: pip install checkov pytest
+
+      - name: Assume ci-doomscroll-plan via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: terraform fmt
+        run: terraform fmt -check -recursive infra
+
+      - name: terraform init
+        working-directory: infra/app
+        run: terraform init -input=false
+
+      - name: terraform validate
+        working-directory: infra/app
+        run: terraform validate
+
+      - name: checkov
+        run: checkov -d infra --compact
+
+      # pytest exits with code 5 when there are no tests yet. Treat that as a pass
+      # until real tests exist in M2. Any other failure still fails the build.
+      - name: pytest
+        run: pytest || [ $? -eq 5 ]
+
+      - name: terraform plan
+        working-directory: infra/app
+        run: terraform plan -input=false -no-color
