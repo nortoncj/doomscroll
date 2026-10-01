@@ -16,6 +16,18 @@ variable "github_repo" {
   default     = "doomscroll"
 }
 
+variable "github_owner_id" {
+  description = "Numeric GitHub user ID. GitHub includes it in the OIDC sub claim so a deleted or renamed account can't be impersonated."
+  type        = string
+  default     = "42925846"
+}
+
+variable "github_repo_id" {
+  description = "Numeric GitHub repo ID. Same reason: a recreated repo with the same name gets a new ID and can't assume these roles."
+  type        = string
+  default     = "1391422537"
+}
+
 variable "name_prefix" {
   description = <<-EOT
     Every app stack resource must start with this prefix (doomscroll-jobs,

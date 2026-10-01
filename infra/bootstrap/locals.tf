@@ -11,6 +11,6 @@ locals {
   # makes a collision basically impossible.
   state_bucket_name = "${var.name_prefix}-tfstate-${local.account_id}"
 
-  # The "subject" GitHub puts in its OIDC token starts with this.
-  github_repo_sub = "repo:${var.github_owner}/${var.github_repo}"
+  # GitHub's sub claim uses immutable IDs: repo:OWNER@OWNER_ID/REPO@REPO_ID
+  github_repo_sub = "repo:${var.github_owner}@${var.github_owner_id}/${var.github_repo}@${var.github_repo_id}"
 }
