@@ -35,5 +35,5 @@ resource "aws_dynamodb_table" "jobs" {
     enabled = true
   }
 
-  
+
 }
