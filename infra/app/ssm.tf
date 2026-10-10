@@ -33,3 +33,12 @@ resource "aws_ssm_parameter" "api" {
     ignore_changes = [value]
   }
 }
+
+# The parameters were created by hand before the first deploy finished.
+# Adopt them into state instead of recreating them. ignore_changes on the
+# resource means the real key values stay exactly as they are.
+import {
+  for_each = local.api_parameters
+  to       = aws_ssm_parameter.api[each.key]
+  id       = "/${var.name_prefix}/${each.value}"
+}
