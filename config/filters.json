@@ -1,6 +1,6 @@
 {
   "include_keywords": [
-    "devops", "devsecops", "cloud", "platform engineer",
+    "devops", "devsecops", "cloud", "platform engineer", "it", "helpdesk", "web",
     "site reliability", "sre", "infrastructure",
     "build engineer", "release engineer",
     "embedded", "firmware", "iot",
@@ -14,7 +14,7 @@
   "locations": [
     "remote", "anywhere", "telework", "location negotiable",
     "tampa", "st. petersburg", "clearwater", "largo",
-    "orlando", "melbourne"
+    "orlando", "melbourne","huntsville","colorado springs", "dc"
   ],
   "greenhouse_boards": ["spacex"],
   "lever_companies": ["palantir"]
