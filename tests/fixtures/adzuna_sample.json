@@ -1,0 +1,169 @@
+{
+  "results": [
+    {
+      "id": "5914858061",
+      "company": {
+        "display_name": "Elite Technical",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "category": {
+        "label": "IT Jobs",
+        "tag": "it-jobs",
+        "__CLASS__": "Adzuna::API::Response::Category"
+      },
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "DevOps Engineer",
+      "salary_min": 94335.4,
+      "created": "2026-10-06T21:41:28Z",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiWkhTNGVWSEU4UkdqU2ZyQ3NCTzBSUSIsImkiOiI1OTE0ODU4MDYxIn0.YvDRyhAL5C-oxeG3Gtq8wOEROdEWk-kB6kQ16Z1pJY8",
+      "latitude": 33.060381,
+      "longitude": -96.733343,
+      "description": "DevOps Engineer Our client, a leading multinational telecommunications technology company, has an urgent need for a DevOps Engineer to automate and manage cloud deployments and support scalable, cloud-native systems. This is a hybrid role requiring onsite work at least three days per week. Responsibilities: - Automate cloud deployments using Terraform and Ansible. - Design and manage scalable CI/CD pipelines in Azure DevOps. - Deploy and support microservices and containerized workloads using K…",
+      "salary_max": 94335.4,
+      "salary_is_predicted": "1",
+      "location": {
+        "display_name": "Plano, Collin County",
+        "area": [
+          "US",
+          "Texas",
+          "Collin County",
+          "Plano"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "redirect_url": "https://www.adzuna.com/land/ad/5914858061?se=ZHS4eVHE8RGjSfrCsBO0RQ&utm_medium=api&utm_source=REDACTED&v=7C8C8087989A8C91D4C8EF410A662AEF2F2FE917"
+    },
+    {
+      "salary_is_predicted": "1",
+      "salary_max": 122735.72,
+      "location": {
+        "display_name": "US",
+        "area": [
+          "US"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "description": "Job Description Job Description Our client is seeking a DevOps Engineer / Cloud Engineer Level 1 to support a mission-critical Government program in Laurel, MD. This position will support the transition, integration, automation, and operation of applications and capabilities within cloud environments. The ideal candidate will have hands-on experience with AWS, Ansible, CI/CD, Linux, infrastructure automation, and DevOps methodologies, with the ability to work closely with system administrators,…",
+      "redirect_url": "https://www.adzuna.com/land/ad/5914938286?se=ZHS4eVHE8RGjSfrCsBO0RQ&utm_medium=api&utm_source=REDACTED&v=77E6E858815E5E33339E0C40FE1A5632E1624750",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTkxNDkzODI4NiIsInMiOiJaSFM0ZVZIRThSR2pTZnJDc0JPMFJRIn0.l4BXwl4QRZn9zh6hN9oe2YZU9v5BRk9gU5XpgNQSfsM",
+      "created": "2026-10-06T22:02:25Z",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "title": "Devops Engineer",
+      "salary_min": 122735.72,
+      "id": "5914938286",
+      "category": {
+        "tag": "it-jobs",
+        "label": "IT Jobs",
+        "__CLASS__": "Adzuna::API::Response::Category"
+      },
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Omniscius Consulting"
+      }
+    },
+    {
+      "redirect_url": "https://www.adzuna.com/land/ad/5914983559?se=ZHS4eVHE8RGjSfrCsBO0RQ&utm_medium=api&utm_source=REDACTED&v=BDCB3701B5BDBEF6EB044420F4F33A78F62F8773",
+      "salary_max": 150889.06,
+      "salary_is_predicted": "1",
+      "location": {
+        "area": [
+          "US",
+          "Colorado",
+          "Boulder County",
+          "Longmont"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Longmont, Boulder County"
+      },
+      "description": "Job Description Job Description Who We Are Stored Energy Systems (SENS) is an award-winning manufacturer of premium quality power conversion products located in Longmont, CO. In business for over 50 years, SENS is the market leader with a proven track record of providing highly reliable battery chargers, DC power systems, and related products to industrial markets. For more information on our company please see our web site at View the SENS Product Catalog Summary We are seeking a highly motiva…",
+      "longitude": -105.10373,
+      "latitude": 40.16203,
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTkxNDk4MzU1OSIsInMiOiJaSFM0ZVZIRThSR2pTZnJDc0JPMFJRIn0.jRk3GlY1v6ePHQodV1w5VsY4Ju-a_Fw0LI1Zi3cVjzs",
+      "created": "2026-10-06T22:08:19Z",
+      "salary_min": 150889.06,
+      "title": "DevOps Engineer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "company": {
+        "display_name": "Stored Energy Systems",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs",
+        "tag": "it-jobs"
+      },
+      "id": "5914983559"
+    },
+    {
+      "contract_time": "full_time",
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiWkhTNGVWSEU4UkdqU2ZyQ3NCTzBSUSIsImkiOiI1OTE0OTg1NDY5In0.piPY7m1jpiIwvZuxZluXbMOQ8Wloxls4vN19CZ0UaxQ",
+      "longitude": -97.865683,
+      "redirect_url": "https://www.adzuna.com/land/ad/5914985469?se=ZHS4eVHE8RGjSfrCsBO0RQ&utm_medium=api&utm_source=REDACTED&v=E5E828CCAC414D8C5ED5CF5997C0724594799E28",
+      "id": "5914985469",
+      "company": {
+        "display_name": "Izuma Networks",
+        "__CLASS__": "Adzuna::API::Response::Company"
+      },
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs",
+        "tag": "it-jobs"
+      },
+      "title": "DevOps Developer",
+      "__CLASS__": "Adzuna::API::Response::Job",
+      "salary_min": 83660.66,
+      "created": "2026-10-06T22:08:39Z",
+      "latitude": 30.320233,
+      "description": "Responsibilities and Duties In general you will be responsible for maintaining a development and production cloud deployments on multiple platforms which includes GKE, Azure, AWS and bare metal. Maintain the cloud deployments with an 99.999% uptime Have some experience deploying apps on Kubernetes Change management, patches, software updates etc on a recurring basis Develop cloud automation tools in bash, python, our internal cloud management application, and other open source tools Take owners…",
+      "location": {
+        "display_name": "Bee Cave, Travis County",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "US",
+          "Texas",
+          "Travis County",
+          "Bee Cave"
+        ]
+      },
+      "salary_max": 83660.66,
+      "salary_is_predicted": "1"
+    },
+    {
+      "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTkxNDUyMjcwNiIsInMiOiJaSFM0ZVZIRThSR2pTZnJDc0JPMFJRIn0.-qDt8YAoPiD7hBXEFjk0RXXaxZ3Bj-2THHpLVyQRFi4",
+      "redirect_url": "https://www.adzuna.com/land/ad/5914522706?se=ZHS4eVHE8RGjSfrCsBO0RQ&utm_medium=api&utm_source=REDACTED&v=19DBF107824A46F62575B12C92B98B2C9C22FCCF",
+      "longitude": -97.744386,
+      "contract_time": "full_time",
+      "created": "2026-10-06T20:33:53Z",
+      "salary_is_predicted": "1",
+      "location": {
+        "display_name": "Austin, Travis County",
+        "area": [
+          "US",
+          "Texas",
+          "Travis County",
+          "Austin"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_max": 79631.64,
+      "description": "Responsibilities and Duties In general you will be responsible for maintaining a development and production cloud deployments on multiple platforms which includes GKE, Azure, AWS and bare metal. Maintain the cloud deployments with an 99.999% uptime Have some experience deploying apps on Kubernetes Change management, patches, software updates etc on a recurring basis Develop cloud automation tools in bash, python, our internal cloud management application, and other open source tools Take owners…",
+      "latitude": 30.272921,
+      "company": {
+        "__CLASS__": "Adzuna::API::Response::Company",
+        "display_name": "Izuma Networks"
+      },
+      "category": {
+        "__CLASS__": "Adzuna::API::Response::Category",
+        "label": "IT Jobs",
+        "tag": "it-jobs"
+      },
+      "id": "5914522706",
+      "salary_min": 79631.64,
+      "title": "DevOps Developer",
+      "__CLASS__": "Adzuna::API::Response::Job"
+    }
+  ],
+  "mean": 149772.58,
+  "count": 58022,
+  "__CLASS__": "Adzuna::API::Response::JobSearchResults"
+}

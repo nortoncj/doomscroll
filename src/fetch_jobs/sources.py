@@ -1,0 +1,219 @@
+"""Fetch and normalize job postings from each source.
+
+Every source has two halves:
+  fetch_<source>()  makes the HTTP call (stdlib only, no requests package)
+  parse_<source>()  turns the raw JSON into a list of Job dicts
+
+Tests only ever touch the parse_ half, using saved responses in
+tests/fixtures/. CI never calls a live API.
+
+Every parser returns the same shape:
+  job_id     "<source>_<id>", safe to use in a URL path (no slashes)
+  source     "greenhouse" | "lever" | "usajobs" | "adzuna"
+  title, company, location, url
+  posted_at  ISO 8601 string, or "" if the source didn't give one
+"""
+
+from __future__ import annotations
+
+import json
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone
+from typing import Any, TypedDict
+
+TIMEOUT_SECONDS = 20
+USER_AGENT = "doomscroll/1.0 (personal job tracker)"
+
+
+class Job(TypedDict):
+    job_id: str
+    source: str
+    title: str
+    company: str
+    location: str
+    url: str
+    posted_at: str
+
+
+# --------------------------------------------------------------------------
+# Helpers
+# --------------------------------------------------------------------------
+
+def _get_json(url: str, headers: dict[str, str] | None = None) -> Any:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
+    with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
+        return json.load(resp)
+
+
+def _iso(value: Any) -> str:
+    """Normalize whatever date format a source uses into ISO 8601."""
+    if value in (None, ""):
+        return ""
+    if isinstance(value, (int, float)):
+        # Lever sends milliseconds since epoch.
+        return datetime.fromtimestamp(value / 1000, tz=timezone.utc).isoformat()
+    text = str(value).strip().replace("Z", "+00:00")
+    try:
+        return datetime.fromisoformat(text).isoformat()
+    except ValueError:
+        # USAJobs sends 4 digit fractions ("2026-09-01T00:00:00.0000"),
+        # which older Pythons reject. Fall back to the date and time part.
+        try:
+            return datetime.fromisoformat(text[:19]).isoformat()
+        except ValueError:
+            return text
+
+
+def _job_id(source: str, raw_id: Any) -> str:
+    # Slashes would break PATCH /jobs/{job_id}, so swap them out.
+    return f"{source}_{str(raw_id).strip().replace('/', '-')}"
+
+
+# --------------------------------------------------------------------------
+# Greenhouse (public, no auth)
+# --------------------------------------------------------------------------
+
+def fetch_greenhouse(board: str) -> dict:
+    return _get_json(f"https://boards-api.greenhouse.io/v1/boards/{urllib.parse.quote(board)}/jobs")
+
+
+def parse_greenhouse(raw: dict, board: str = "") -> list[Job]:
+    jobs: list[Job] = []
+    for item in raw.get("jobs", []):
+        if not item.get("id") or not item.get("title"):
+            continue
+        jobs.append(Job(
+            job_id=_job_id("greenhouse", item["id"]),
+            source="greenhouse",
+            title=item["title"].strip(),
+            company=(item.get("company_name") or board).strip(),
+            location=((item.get("location") or {}).get("name") or "").strip(),
+            url=item.get("absolute_url", ""),
+            posted_at=_iso(item.get("first_published") or item.get("updated_at")),
+        ))
+    return jobs
+
+
+# --------------------------------------------------------------------------
+# Lever (public, no auth)
+# --------------------------------------------------------------------------
+
+def fetch_lever(company: str) -> list:
+    return _get_json(f"https://api.lever.co/v0/postings/{urllib.parse.quote(company)}?mode=json")
+
+
+def parse_lever(raw: list, company: str = "") -> list[Job]:
+    jobs: list[Job] = []
+    for item in raw or []:
+        if not item.get("id") or not item.get("text"):
+            continue
+        cats = item.get("categories") or {}
+        locations = cats.get("allLocations") or [cats.get("location") or ""]
+        location = "; ".join(loc for loc in locations if loc)
+        # Lever puts remote in workplaceType, not the location string.
+        if item.get("workplaceType") == "remote" and "remote" not in location.lower():
+            location = f"Remote; {location}" if location else "Remote"
+        jobs.append(Job(
+            job_id=_job_id("lever", item["id"]),
+            source="lever",
+            title=item["text"].strip(),
+            company=company.title() if company else "",
+            location=location,
+            url=item.get("hostedUrl", ""),
+            posted_at=_iso(item.get("createdAt")),
+        ))
+    return jobs
+
+
+# --------------------------------------------------------------------------
+# USAJobs (API key + registered email in User-Agent)
+# --------------------------------------------------------------------------
+
+# 2210 IT Management, 0854 Computer Engineering, 0855 Electronics Engineering
+USAJOBS_SERIES = "2210;0854;0855"
+
+
+def fetch_usajobs(api_key: str, email: str, days_posted: int = 7) -> dict:
+    params = urllib.parse.urlencode({
+        "JobCategoryCode": USAJOBS_SERIES,
+        "DatePosted": days_posted,
+        "ResultsPerPage": 500,
+    })
+    return _get_json(
+        f"https://data.usajobs.gov/api/search?{params}",
+        headers={
+            "Host": "data.usajobs.gov",
+            "User-Agent": email,  # USAJobs requires the registered email here
+            "Authorization-Key": api_key,
+        },
+    )
+
+
+def parse_usajobs(raw: dict) -> list[Job]:
+    jobs: list[Job] = []
+    items = (raw.get("SearchResult") or {}).get("SearchResultItems") or []
+    for item in items:
+        d = item.get("MatchedObjectDescriptor") or {}
+        url = (d.get("PositionURI") or "").replace(":443", "")
+        # PositionID has slashes ("24-12198900-6898/DIHD"), so prefer the
+        # numeric announcement ID, falling back to the end of the URL.
+        raw_id = item.get("MatchedObjectId") or url.rstrip("/").rsplit("/", 1)[-1]
+        title = (d.get("PositionTitle") or "").strip()
+        if not raw_id or not title:
+            continue
+
+        location = (d.get("PositionLocationDisplay") or "").strip()
+        if location.lower() in ("", "multiple locations"):
+            names = [loc.get("LocationName", "") for loc in d.get("PositionLocation") or []]
+            location = "; ".join(n for n in names if n) or location
+
+        details = ((d.get("UserArea") or {}).get("Details") or {})
+        if details.get("RemoteIndicator") and "remote" not in location.lower():
+            location = f"Remote; {location}" if location else "Remote"
+
+        jobs.append(Job(
+            job_id=_job_id("usajobs", raw_id),
+            source="usajobs",
+            title=title,
+            company=(d.get("OrganizationName") or d.get("DepartmentName") or "").strip(),
+            location=location,
+            url=url,
+            posted_at=_iso(d.get("PublicationStartDate")),
+        ))
+    return jobs
+
+
+# --------------------------------------------------------------------------
+# Adzuna (app_id + app_key)
+# --------------------------------------------------------------------------
+
+ADZUNA_KEYWORDS = "devops devsecops cloud sre infrastructure embedded firmware iot"
+
+
+def fetch_adzuna(app_id: str, app_key: str, page: int = 1, days_old: int = 7) -> dict:
+    params = urllib.parse.urlencode({
+        "app_id": app_id,
+        "app_key": app_key,
+        "what_or": ADZUNA_KEYWORDS,
+        "max_days_old": days_old,
+        "results_per_page": 50,
+    })
+    return _get_json(f"https://api.adzuna.com/v1/api/jobs/us/search/{page}?{params}")
+
+
+def parse_adzuna(raw: dict) -> list[Job]:
+    jobs: list[Job] = []
+    for item in raw.get("results", []):
+        if not item.get("id") or not item.get("title"):
+            continue
+        jobs.append(Job(
+            job_id=_job_id("adzuna", item["id"]),
+            source="adzuna",
+            title=item["title"].strip(),
+            company=((item.get("company") or {}).get("display_name") or "").strip(),
+            location=((item.get("location") or {}).get("display_name") or "").strip(),
+            url=item.get("redirect_url", ""),
+            posted_at=_iso(item.get("created")),
+        ))
+    return jobs
