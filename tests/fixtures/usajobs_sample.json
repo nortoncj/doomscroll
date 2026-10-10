@@ -1,0 +1,1243 @@
+{
+  "LanguageCode": "EN",
+  "SearchParameters": {},
+  "SearchResult": {
+    "SearchResultCount": 5,
+    "SearchResultCountAll": 363,
+    "SearchResultItems": [
+      {
+        "MatchedObjectId": "759326100",
+        "MatchedObjectDescriptor": {
+          "PositionID": "24-12198900-6898/DIHD",
+          "PositionTitle": "Data Engineer",
+          "PositionURI": "https://www.usajobs.gov:443/job/759326100",
+          "ApplyURI": [
+            "https://www.usajobs.gov:443/job/759326100"
+          ],
+          "PositionLocationDisplay": "Washington, District of Columbia",
+          "PositionLocation": [
+            {
+              "LocationName": "Washington, District of Columbia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "District of Columbia",
+              "CityName": "Washington, District of Columbia",
+              "Longitude": -77.03968,
+              "Latitude": 38.89702
+            }
+          ],
+          "OrganizationName": "Central Intelligence Agency",
+          "DepartmentName": "Other Agencies and Independent Organizations",
+          "JobCategory": [
+            {
+              "Name": "Information Technology Management",
+              "Code": "2210"
+            }
+          ],
+          "JobGrade": [
+            {
+              "Code": "GS"
+            }
+          ],
+          "PositionSchedule": [
+            {
+              "Name": "",
+              "Code": "1"
+            }
+          ],
+          "PositionOfferingType": [
+            {
+              "Name": "",
+              "Code": "15317"
+            }
+          ],
+          "QualificationSummary": "Minimum Qualifications Interested candidates should be passionate about the ideals of our American republic, committed to upholding the rule of law and the U.S. Constitution, and committed to improving the efficiency of the Federal government. Hiring decisions will not be based on race, sex, color, religion, or national origin. Proficiency with computer programming languages like Python, Java, Scala, or equivalent Object-Oriented Programming Language and knowledge of SQL Knowledge of data ingestion, transformation, modeling, and storage: Strong critical thinking and problem-solving skills Ability to work independently and in groups within a team environment. Curiosity, creativity, and initiative Ability to meet the minimum requirements for joining CIA, including U.S. citizenship and a background investigation Desired Qualifications Prior experience related to data engineering, data science, data architecture, database and search technologies Experience analyzing or processing bulk datasets Experience with signal/image processing, geospatial modeling or voice/data communications Prior application of serverless design patterns, such as serverless applications or websites Understanding of scaling and performance of distributed/cloud systems Understanding of data science concepts, AI/ML, automation, and scripting",
+          "PositionRemuneration": [
+            {
+              "MinimumRange": "74584",
+              "MaximumRange": "156755",
+              "RateIntervalCode": "PA",
+              "Description": "Per Year"
+            }
+          ],
+          "PositionStartDate": "2026-09-01T00:00:00.0000",
+          "PositionEndDate": "2027-01-31T23:59:59.9970",
+          "PublicationStartDate": "2026-09-01T00:00:00.0000",
+          "ApplicationCloseDate": "2027-01-31T23:59:59.9970",
+          "PositionFormattedDescription": [
+            {
+              "Label": "Dynamic Teaser",
+              "LabelDescription": "Hit highlighting for keyword searches."
+            }
+          ],
+          "UserArea": {
+            "Details": {
+              "JobSummary": "Data Engineers in the Directorate of Mission Systems (DMS) solve critical data challenges by building data pipelines, transforming data, and delivering data to systems to advance CIA's mission.",
+              "WhoMayApply": {
+                "Name": "",
+                "Code": ""
+              },
+              "LowGrade": "9",
+              "HighGrade": "13",
+              "PromotionPotential": "15",
+              "OrganizationCodes": "OT/CI00",
+              "Relocation": "True",
+              "HiringPath": [
+                "fed-competitive",
+                "fed-excepted",
+                "public"
+              ],
+              "HiringPathDisplay": [
+                "Competitive service",
+                "Excepted service",
+                "Open to the public"
+              ],
+              "MCOTags": [
+                "07",
+                "IC Intel",
+                "NatSec",
+                "AI"
+              ],
+              "TotalOpenings": "Many",
+              "AgencyMarketingStatement": "We are the Nation's first line of defense, and we have a mission for you. Join us as we leverage the power of information to keep our Nation safe by collecting foreign intelligence, producing objective all-source analysis, conducting covert action at the president's direction, and safeguarding secrets that protect the United States. Our workforce is our strength. CIA is a place that values people with different backgrounds and perspectives. The goal being to create a community that fosters a sense of belonging in a way that enriches officers and empowers them to advance CIA's mission. Read more about life at CIA here: https://www.cia.gov/careers/working-at-cia/",
+              "TravelCode": "1",
+              "MajorDuties": [
+                "As a Directorate of Mission Systems (DMS) Data Engineer at CIA, you will transform and deliver high-priority datasets to enable exploitation and analysis for CIA's intelligence mission. Using computer programming and other capabilities, DMS Data Engineers develop processes to transform raw structured or unstructured data into useful, actionable information for critical mission systems. They design and build scalable data pipelines using commercial cloud, open source, and custom software solutions to process large datasets. DMS Data Engineers create automated data validation methods to load data into systems accurately and consistently. Through partnerships with collectors, data scientists, and software engineers, DMS Data Engineers design how data will be integrated and stored for optimal effectiveness. DMS Data Engineers are curious and use their skills to identify problems and build solutions, applying updated expertise in areas such as ETL, workflow and container orchestration, database and search technologies, distributed computing, serverless design, and cloud solutions. DMS encourages and supports continual learning. Opportunities exist for continued professional development, to include advanced technical training. Travel opportunities may be available."
+              ],
+              "Education": "Bachelor's degree in one of the following fields or related studies: Computer Science Computer/Electrical Engineering or related field Data Science or related quantitative field Information Science/Technology Forensics (Digital Forensics, Forensic Science, and Technology) Mathematics/Statistics At least a 3.0 GPA on a 4-point scale",
+              "Requirements": "",
+              "Evaluations": "For more information, please visit: Data Engineer.",
+              "HowToApply": "This post is for viewing purposes only. To get started, please visit https://www.cia.gov/careers/, where you can read more about this position and express your interest in up to four jobs. Upon expressing your interest, you will be taken to MyLINK, which allows you to submit your resume and job rankings and provide basic information about yourself.",
+              "WhatToExpectNext": "After you express interest for up to four positions on cia.gov/careers, a CIA recruiter may contact you for further discussion if your qualifications meet our needs. See the MyLINK FAQs on our website for more information.",
+              "RequiredDocuments": "For further information, please visit: Data Engineer.",
+              "Benefits": "",
+              "BenefitsUrl": "https://www.cia.gov/careers/working-at-cia/benefits/",
+              "BenefitsDisplayDefaultText": true,
+              "OtherInformation": "",
+              "KeyRequirements": [],
+              "WithinArea": "False",
+              "CommuteDistance": "0",
+              "ServiceType": "02",
+              "AnnouncementClosingType": "01",
+              "AgencyContactWebsite": "https://cia.gov/careers",
+              "SecurityClearance": "Sensitive Compartmented Information",
+              "DrugTestRequired": "True",
+              "PositionSensitivitiy": "Special-Sensitive (SS)/High Risk",
+              "AdjudicationType": [
+                "National security"
+              ],
+              "TeleworkEligible": false,
+              "RemoteIndicator": false,
+              "FinancialDisclosure": true,
+              "BargainingUnitStatus": false
+            },
+            "IsRadialSearch": false
+          },
+          "AnnouncementClosingType": "01"
+        },
+        "RelevanceRank": 0
+      },
+      {
+        "MatchedObjectId": "849162500",
+        "MatchedObjectDescriptor": {
+          "PositionID": "MO-12827011-AF-25-097",
+          "PositionTitle": "IT SPECIALIST (NETWORK) (TITLE 32)",
+          "PositionURI": "https://www.usajobs.gov:443/job/849162500",
+          "ApplyURI": [
+            "https://www.usajobs.gov:443/job/849162500"
+          ],
+          "PositionLocationDisplay": "Jefferson Barracks, Missouri",
+          "PositionLocation": [
+            {
+              "LocationName": "Jefferson Barracks, Missouri",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Missouri",
+              "CityName": "Jefferson Barracks, Missouri",
+              "Longitude": -90.28039,
+              "Latitude": 38.50283
+            }
+          ],
+          "OrganizationName": "Air National Guard Units",
+          "DepartmentName": "Department of the Air Force",
+          "SubAgency": "131st Bomb Wing",
+          "JobCategory": [
+            {
+              "Name": "Information Technology Management",
+              "Code": "2210"
+            }
+          ],
+          "JobGrade": [
+            {
+              "Code": "GS"
+            }
+          ],
+          "PositionSchedule": [
+            {
+              "Name": "",
+              "Code": "1"
+            }
+          ],
+          "PositionOfferingType": [
+            {
+              "Name": "",
+              "Code": "15318"
+            }
+          ],
+          "QualificationSummary": "MILITARY REQUIREMENTS: Selected candidate must currently be assigned to a military unit in the Missouri Air National Guard. Title 32 employees will not be militarily senior to their full-time supervisor (grade inversion). Maximum Military Grade - SMSgt (E-8) GENERAL EXPERIENCE: Must possess experience that provided you basic knowledge of data processing functions and general management principles that enable you to understand the stages required to automate a work process; experience in work such as computer operator or assistant, computer sales representative, program analyst, or other positions that required the use or adaptation of computer programs and systems. GS-11 SPECIALIZED EXPERIENCE: Must possess 36 months of specialized experience that demonstrates your ability to perform assignments as a computer network engineer frequently requiring diagnosing and correcting complex system faults based on data provided by remote systems monitoring tools; experience resolving problems affecting multiple users of a large network; experience assessing situations complicated by conflicting requirements which must be analyzed to determine the applicability of established methods; experience identifying, analyzing and recommending new requirements and changes to current network systems; and experience installing, configuring, troubleshooting, and repairing new and existing network information systems, network peripherals and devices Possession (or previous possession) of AFSC 1D7XXX is optimum. DOD Information Awareness Certification Requirements: The employee must obtain and maintain at a minimum a Secret security clearance. Incumbent must possess or be able to obtain and maintain certifications per DoD Directive 8570.1-M, AR 25-2, and as detailed in the Information Assurance (IA) Training and Certification Best Business Practice (BBP).Failure to satisfactorily obtain and maintain required certifications in accordance with the listed publications are grounds for termination. Selectee is required to satisfactorily complete the appropriate training and obtain the required certification/recertification for this position as outlined in DoD Publication 8570.01-M, Information Assurance Workforce Improvement Program, dated 19 December 2005 (incorporating Change 1 dated 15 May 2008).",
+          "PositionRemuneration": [
+            {
+              "MinimumRange": "75815",
+              "MaximumRange": "98554",
+              "RateIntervalCode": "PA",
+              "Description": "Per Year"
+            }
+          ],
+          "PositionStartDate": "2025-10-30T00:00:00.0000",
+          "PositionEndDate": "2026-10-29T23:59:59.9970",
+          "PublicationStartDate": "2025-10-30T00:00:00.0000",
+          "ApplicationCloseDate": "2026-10-29T23:59:59.9970",
+          "PositionFormattedDescription": [
+            {
+              "Label": "Dynamic Teaser",
+              "LabelDescription": "Hit highlighting for keyword searches."
+            }
+          ],
+          "UserArea": {
+            "Details": {
+              "JobSummary": "This is a National Guard Title 32 Excepted Service Position. This position is a Temporary GS-2210-11 IT SPECIALIST (NETWORK) (TITLE 32), Position Description Number D1560P01 and is part of the MO 131st Bomb Wing. This is a non-bargaining position. SEE NOTES UNDER CONDITIONS OF EMPLOYMENT BELOW.",
+              "WhoMayApply": {
+                "Name": "",
+                "Code": ""
+              },
+              "LowGrade": "11",
+              "HighGrade": "11",
+              "PromotionPotential": "11",
+              "SubAgencyName": "131st Bomb Wing",
+              "OrganizationCodes": "AF/AFNG",
+              "Relocation": "False",
+              "HiringPath": [
+                "nguard"
+              ],
+              "HiringPathDisplay": [
+                "National Guard and reserves"
+              ],
+              "MCOTags": [],
+              "TotalOpenings": "1",
+              "AgencyMarketingStatement": "This a National Guard Title 32 Excepted Service Position. The National Guard is the oldest component of the Armed Forces of the United States. Since the earliest American colonial days, citizens have joined together for collective defense. We have a proud tradition of coming to the aid of our friends and neighbors in times of serious emergencies. Join our National Guard team and serve your nation, your states and your community!",
+              "TravelCode": "1",
+              "ApplyOnlineUrl": "https://apply.usastaffing.gov/Application/Apply",
+              "DetailStatusUrl": "https://apply.usastaffing.gov/Application/ApplicationStatus",
+              "MajorDuties": [
+                "Designed and engineered data and voice networks carried over various transmission systems such as multi-channel satellite.",
+                "Designed and engineered data and voice networks carried over various transmission systems such as troposphere scatter systems.",
+                "Designed and engineered data and voice networks carried over various transmission systems such as Line-Of-Sight (LOS) RF radios.",
+                "Designed and engineered data and voice networks carried over various transmission systems such as Line-Of-Sight (LOS) laser radios.",
+                "Designed and engineered data and voice networks carried over various transmission systems such as cable systems, fiber optic as well as copper.",
+                "Engineered and designed router-to-router connections utilizing military and commercial protocol.",
+                "Engineered and designed router-to-router connections utilizing circuit configurations through military and commercial multiplexers.",
+                "Developed plans for employment of communications systems to support in-garrison and deployed operations.",
+                "Planned and designed Wide Area Networks (WANs) consisting of Commercial Off the Shelf (COTS) and Military Specification (MILSPEC) components to operate IAW accepted Information Technology (IT) security policies using automated network planning tools.",
+                "Utilized a broad knowledge of IT concepts, principles, methods and practices to provide network services that support a requesting agency's requirements.",
+                "Utilized a broad knowledge of IT concepts, principles, methods and practices to identify, direct, and coordinate the actions required to provide needed services.",
+                "Determined the compatibility of frequency assignments for fixed station and/or mobile radio, radar, satellite links, and other systems used by the military.",
+                "Coordinated frequency assignments with ANG Headquarters, local Spectrum Managers, unit spectrum managers as well as MAJCOM Spectrum Management personnel.",
+                "Determined requirements and requested resources from different agencies to support contingency and/or training networks.",
+                "Identified and corrected network and transmission deficiencies in planned or currently operational networks.",
+                "Determined operational, technical and support requirements for the location, installation, operation and maintenance of network equipment and systems.",
+                "Reviewed and analyzed data, made technical judgments, and prepared decisions and recommendations concerning the quality, acceptability, and/or need for changes/improvements.",
+                "Interpreted and applied joint standards when designing data, voice, and transmission networks and/or systems to meet mission objectives.",
+                "Created or adapted guides and controls for network, system, or total communications programs in support of daily operations, training exercises, and deployments.",
+                "Performs other duties as assigned."
+              ],
+              "Education": "Substitution of Education for this GS-11 Position: Must possess a Ph.D. or equivalent, or three years of progressively higher level graduate education in computer science, engineering, information science, or information systems management leading to such a degree.",
+              "Requirements": "",
+              "Evaluations": "Once the announcement has closed, your resume and supporting documentation will be used to determine if you meet the qualifications listed on this announcement. If you are minimally qualified, your resume and supporting documentation will be compared to your responses on the assessment questionnaire to determine your level of experience. If you rate yourself higher than is supported by your application package, your responses may be adjusted and/or you may be excluded from consideration for this position. If you are found to be among the top qualified candidates, you will be referred to the selecting official for employment consideration.",
+              "HowToApply": "To apply for this position, you must complete the online application/Occupational Questionnaire and submit the documentation specified in the Required Documents section below. To view the Occupational Questionnaire, click the following link: https://apply.usastaffing.gov/ViewQuestionnaire/12827011 A complete application package must be submitted by 11:59 PM (EST) on the closing date of the announcement to receive consideration. To begin, click Apply to access the online application. You will need to be logged into your USAJOBS account to apply. If you do not have a USAJOBS account, you will need to create one before beginning the application. Follow the prompts to select your resume and/or other supporting documents to be included with your application package. You will have the opportunity to upload additional documents to include in your application before it is submitted. Your uploaded documents may take several hours to clear the virus scan process. After acknowledging you have reviewed your application package, complete the Include Personal Information section as you deem appropriate and click to continue with the application process. You will be taken to the online application which you must complete in order to apply for the position. Complete the online application, verify the required documentation is included with your application package, and submit the application. To verify the status of your application, log into your USAJOBS account (https://my.usajobs.gov/Account/Login), all of your applications will appear on the Welcome screen. The Application Status will appear along with the date your application was last updated. For information on what each Application Status means, visit: https://www.usajobs.gov/Help/how-to/application/status/.",
+              "WhatToExpectNext": "Once your online application is submitted you will receive a confirmation notification by email. Your application will be evaluated by the Human Resources Office to determine your eligibility for the position. After the evaluation is complete, you will receive another notification regarding the status of your application.",
+              "RequiredDocuments": "To apply for this position, you must submit a complete Application Packet which may include the following: Resume (must include the following information) First and Last Name Contact Information (Phone Number and Email) Position Title(s) Company/Organization Name(s) Dates of Employment (MONTH and YEAR) Duties Performed - brief descriptions that show you can perform the tasks at the required level listed in the job announcement Please be advised that copying and pasting the specialized experience from the vacancy announcement into your resume is prohibited and will result in your resume being disqualified. It is best practice to ensure military career information is listed in addition to civilian career information. Transcripts - Only a requirement if education is required OR you substitute education for specialized experience Unofficial copies may be submitted for application purposes, but placement will not occur until official transcripts have been provided. SF-50 - If you have previously been employed by another Federal Agency or previously worked for our agency, please submit a copy of the last Notification of Personnel Action (SF-50). This is NOT a requirement for those that have never been employed by a Federal Agency or those currently employed by our agency. DD214s",
+              "Benefits": "",
+              "BenefitsUrl": "https://www.abc.army.mil/",
+              "BenefitsDisplayDefaultText": true,
+              "OtherInformation": "This is an open continuous announcement. Applicants will be reviewed monthly. Recruitment will continue through the closing date or until the position is filled. Selective Service Act: If you are a male applicant who was born after 12/31/1959 and are required to register under the Military Selective Service Act, the Defense Authorization Act of 1986 requires that you be registered or you are not eligible for appointment in this agency (https://www.sss.gov/RegVer/wfRegistration.aspx).",
+              "KeyRequirements": [],
+              "WithinArea": "False",
+              "CommuteDistance": "0",
+              "ServiceType": "02",
+              "AnnouncementClosingType": "01",
+              "AgencyContactEmail": "chelsea.n.kirchner.civ@army.mil",
+              "AgencyContactPhone": "573-638-9500 X39811",
+              "SecurityClearance": "Secret",
+              "DrugTestRequired": "False",
+              "AdjudicationType": [],
+              "TeleworkEligible": false,
+              "RemoteIndicator": false,
+              "FinancialDisclosure": false,
+              "BargainingUnitStatus": false
+            },
+            "IsRadialSearch": false
+          },
+          "AnnouncementClosingType": "01"
+        },
+        "RelevanceRank": 0
+      },
+      {
+        "MatchedObjectId": "850999700",
+        "MatchedObjectDescriptor": {
+          "PositionID": "SPP- Register 2026",
+          "PositionTitle": "Selective Placement Program (Noncompetitive Appointments for Applicants with Disabilities)",
+          "PositionURI": "https://www.usajobs.gov:443/job/850999700",
+          "ApplyURI": [
+            "https://www.usajobs.gov:443/job/850999700"
+          ],
+          "PositionLocationDisplay": "Multiple Locations",
+          "PositionLocation": [
+            {
+              "LocationName": "Washington, District of Columbia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "District of Columbia",
+              "CityName": "Washington, District of Columbia",
+              "Longitude": -77.032,
+              "Latitude": 38.8904
+            },
+            {
+              "LocationName": "Cabin John, Maryland",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Maryland",
+              "CityName": "Cabin John, Maryland",
+              "Longitude": -77.16213,
+              "Latitude": 38.97457
+            },
+            {
+              "LocationName": "Culpeper, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Culpeper, Virginia",
+              "Longitude": -77.99614,
+              "Latitude": 38.47333
+            }
+          ],
+          "OrganizationName": "Library of Congress",
+          "DepartmentName": "Legislative Branch",
+          "JobCategory": [
+            {
+              "Name": "Copyright",
+              "Code": "1210"
+            },
+            {
+              "Name": "Social Science",
+              "Code": "0101"
+            },
+            {
+              "Name": "Miscellaneous Administration And Program",
+              "Code": "0301"
+            },
+            {
+              "Name": "Librarian",
+              "Code": "1410"
+            },
+            {
+              "Name": "Information Technology Management",
+              "Code": "2210"
+            }
+          ],
+          "JobGrade": [
+            {
+              "Code": "GS"
+            }
+          ],
+          "PositionSchedule": [
+            {
+              "Name": "Open",
+              "Code": "1"
+            }
+          ],
+          "PositionOfferingType": [
+            {
+              "Name": "Temporary (Not To Exceed a period of 120 days to 2 years, depending on qualifications of applicant)",
+              "Code": "15317"
+            }
+          ],
+          "QualificationSummary": "Education: Some positions may require specific training, education and/or degrees depending on the series and grade level of the position being filled. Experience: Applicants must have had progressively responsible experience and training sufficient in scope and quality to furnish them with an acceptable level of knowledge, skills, and abilities to perform the duties of the position. The DETAILED description of your work experience in your personal resume must clearly demonstrate that you have gained and currently posess the knowledge, skills and abilities to satisfactorily perform the duties of the position being filled. Transcripts and certifications provided as proof of qualifying education and/or training must be submitted at the time of application. To view qualification requirements for all series, click on the following link: https://www.opm.gov/policy-data-oversight/classification-qualifications/general-schedule-qualification-standards/. Part-Time, Volunteer or Unpaid Experience: Credit will be given for appropriate undpaid and/or part-time work. You must clearly identify the duties and responsibilities in each position held and the total number of hours worked per week. Volunteer work experience can include work done through National Service Programs (i.e., Peace Corps, Americorps) and other organizations (e.g., professional, pilanthropic, religious, spiritual, community, student and social).",
+          "PositionRemuneration": [
+            {
+              "MinimumRange": "29949",
+              "MaximumRange": "195200",
+              "RateIntervalCode": "PA",
+              "Description": "Per Year"
+            }
+          ],
+          "PositionStartDate": "2025-11-25T00:00:00.0000",
+          "PositionEndDate": "2026-11-25T23:59:59.9970",
+          "PublicationStartDate": "2025-11-25T00:00:00.0000",
+          "ApplicationCloseDate": "2026-11-25T23:59:59.9970",
+          "PositionFormattedDescription": [
+            {
+              "Label": "Dynamic Teaser",
+              "LabelDescription": "Hit highlighting for keyword searches."
+            }
+          ],
+          "UserArea": {
+            "Details": {
+              "JobSummary": "The Library of Congress is accepting applications from people who wish to be considered for employment at the Library under its Selective Placement Program (SPP). It is the policy of the Library to recruit and hire qualified applicants with targeted disabilities by assisting these individuals in obtaining employment consistent with their level of skills and abilities and their capacity for safe and efficient job performance.",
+              "WhoMayApply": {
+                "Name": "",
+                "Code": ""
+              },
+              "LowGrade": "01",
+              "HighGrade": "01",
+              "PromotionPotential": "01",
+              "PromotionPotentialAdditionalText": "Appointments under this program do not have promotion potential beyond the grade to which the applicant is initially appointed.",
+              "OrganizationCodes": "LL/LC00",
+              "Relocation": "False",
+              "HiringPath": [
+                "public"
+              ],
+              "HiringPathDisplay": [
+                "Open to the public"
+              ],
+              "MCOTags": [],
+              "AgencyMarketingStatement": "The Library of Congress serves the Congress in fulfilling its duties and preserves and promotes knowledge and creativity for the benefit of the American people. It is the nation's oldest federal cultural institution and the world's largest library, with more than 158 million items in its physical collections (including books, manuscripts, prints, photos, film, video, and sound recordings) and over 37 million items online. Located primarily on Capitol Hill in Washington, D.C., the Library is the home of the U.S. Copyright Office, the Congressional Research Service (CRS), the Law Library of Congress, and the National Library Service for the Blind and Print Disabled.",
+              "TravelCode": "0",
+              "ApplyOnlineUrl": "https://jobs.monstergovt.com/loc/ros/rosDashboard.hms?O=1&J=27588",
+              "DetailStatusUrl": "https://jobs.monstergovt.com/loc/ros/rosDashboard.hms?O=1&J=27588&S=1",
+              "MajorDuties": [
+                "This announcement may be used to fill one or more vacancies at any time without notification, in any series or grade. Typical job opportunities within the Library can include, but are not limited to, the following occupations: Librarian or Library Technician Copyright Specialist Lawyer or Legal Specialist Foreign Law Specialist Social Science Analyst Economist Foreign Affairs Specialist Geographer or Cartographer Human Resources Administrative Management and Support Management or Program Analyst Financial Management, Accountant or Budget Analyst Congressional Liaison Communication and Public Affairs Contracts and Procurement Information Technology Safety and Physical Security Services Duties and responsibilities for each position vary and may increase in accordance with the grade level. Appointment under this program does not confer any promotion eligibility in the position to which the applicant is appointed."
+              ],
+              "Education": "",
+              "Requirements": "Applicants with disabilities wishing to be considered for employment at the Library may apply using this announcement for jobs not currently listed on this page. Applicants must (1) have appropriate certification of their disability, (2) show that they have the qualifications for the job, and (3) satisfy the requirements/conditions for employment. By responding to this announcement, you are applying to a resume database for jobs not yet posted. Your resume and any documents submitted will be retained for two years and may be used at any time during that period. When a position is requested to be filled under the SPP hiring authority, a list of applicants will be provided to management for review and possible selection. For all posted positions applicants must apply online at USAJOBS.gov Documentation of Disability: Applicants must submit an appropriate certificate of eligibility when applying for this position. The certificate of disabiliy must verify that the applicant has a severe disability and may be issued by a State Vocational Rehabilitation Office, a Disability Services or Career Services Office of the applicant's college or university, or the Department of Veterans Affairs. The date of certification must be within three (3) years of the vacancy closing date and must be submitted with your application. For more information contact the Library's Office of Equal Employment Opportunity 202-707-6024 or email spp@loc.gov. FAILURE TO SUBMIT YOUR CERTIFICATION WILL CAUSE YOUR APPLICATION TO NOT BE CONSIDERED UNDER THE SELECTIVE PLACEMENT PROGRAM.",
+              "Evaluations": "Please note, there is no page restriction to your resume, and you are allowed to upload a resume longer than two pages in the documents section within the application process. When the application system prompts, please proceed to the agency site to complete your application. Knowledge, Skills and Abilities (KSAs): Your qualifications will be evaluated on the basis of your level of knowledge, skills, abilities and/or competencies as related to the series and grade of the position being filled. Final qualifications determinations will be assessed based on OPM Classification Standards and General Qualifications Standards. Interviews: You will be contacted by e-mail and/or telephone if your application is identified as qualifying for a position being filled. An interview may be conducted. If interviewed, you will be asked to address the same knowledges, skills abilities and/or competencies used to initially qualify your application for the position. To view qualification requirements for all series, click on the following link: https://www.opm.gov/policy-data-oversight/classification-qualifications/general-schedule-qualification-standards/. Requesting a Reasonable Accommodation for the Interview: Applicants should state any accommodation needed for the interview process prior to the interview, e.g. when the interview is scheduled. You may preview questions for this vacancy.",
+              "HowToApply": "Please carefully follow all instructions under the How to Apply tab to ensure you are considered for any position. You are required to apply online for this announcement. We are unable to accept mailed or emailed documents. You must complete the entire application process, including submission of all documents BEFORE this announcement closes. To do so, complete the following steps. Requesting a Reasonable Accommodation for the Application Process: If you need a reasonable accommodation for any part of the application and hiring process, please notify the agency. Decisions to grant reasonable accommodations will be determined on a case-by-case basis. Step 1: If you do not already have one, create a resume on USAJOBS. Although you must enter your Social Security Number for USAJOBS, this information will not be provided to the Library of Congress. Step 2: Review the Job Announcement. We recommend you review the qualification requirements at the OPM link provided for any occupation you feel you may qualify for. You may wish to customize your USAJOBS resume to ensure that it supports your eligibility for that occupation. Step 3: Click on the \"APPLY\" button near the top of this announcement. Follow USAJOBS' instructions to access your account and submit your resume. You will be redirected to the Hiring Management website to complete the application process. If this is your first time in Hiring Management, you will be asked to answer questions related to your eligibility for Federal employment. You will be able to update this information and save it to our account for future announcements. Step 4: Once you have completed the eligibility questions, you will be taken directly to the vacancy application questions. Answer all questions honestly and thoroughly. Step 5: Hiring Management offers three options that will electronically attach your documentation to your online application once you finish answering the questions in the job announcement. (1) You may select a document that you have already uploaded to USAJOBS for a previous announcement. (2) You may electronically upload a document directly from your computer to your application. Be certain to review your complete application for confirmation of the document uploaded and click on \"Finished\" to be returned to USAJOBS. IMPORTANT NOTE: If you have multiple documents of the same kind, e.g. 2 undergraduate transcripts from different schools or 2 SF-50s, etc., be sure that they are all in the same file on your computer or in your USAJOBS profile before uploading them. If you try uploading them individually, only the last one sent will be visible in our system. Likewise, if sending them by fax, be sure and include both of them behind the respective fax cover sheet and send them as one fax. If you send them individually with the same cover sheet, the last one sent will overwrite the first one. Finally, if you upload a document, e.g. your undergraduate transcript, do not also fax that same document (or fax another undergraduate transcript), because whichever one you send last will be the only one that is visible in our system. If you have any questions about this information, please contact the agency. Step 3: Click on \"Submit Application\" after you have reviewed and completed your application. Once you have submitted your application, you can check your status online through your Hiring Management or MY USAJOBS account. Your complete online application and any required supplemental documentation (e.g., SF-50, etc.) must be received by 11:59 p.m. Eastern Standard Time (EST) on the closing date of the announcement. It is your responsibility to ensure that all documents are received on time and that the materials are readable. Failure to do so will result in your application being excluded from consideration for this announcement. If you are experiencing any technical difficulty with the online process, please contact jobhelp@loc.gov.",
+              "WhatToExpectNext": "You will be notified by email and/or telephone when your application is identified as qualifying for a position being filled. You may also check the status of your application for this program at any time by logging onto the USAJOBS \"My USAJOBS\" tab and clicking on \"My Applications.\" You will receive final notification via e-mail when your application has expired.",
+              "RequiredDocuments": "Disabled applicants claiming Selective Placement eligibility must submit proof of disability. Your application will not be considered without submitting this documentation. See documentation requirements in JOB REQUIREMENTS section.",
+              "Benefits": "",
+              "BenefitsUrl": "http://www.loc.gov/hr/employment/index.php",
+              "BenefitsDisplayDefaultText": true,
+              "OtherInformation": "Additional information on the Library's Selective Placement Program can be found at: https://www.loc.gov/hr/employment/LOCSelectivePlacementProgram.pdf. Applicants wishing to be considered for employment at the Library through the SPP may also submit an application using the Library's competitive selection process by responding to a specific job opportunity announcement listed on the Library's job opportunity page at http://www.loc.gov/hr/employment/index.php?action=cMain.showJobs. The salary range indicated reflects the wide range of grades/salaries which may be filled through this process and includes locality pay adjustments for the Washington, D.C., Metropolitan area. Appointments under this program do not have promotion potential beyond the grade to which the applicant is initially appointed. The incumbent of this position may request to work a flextime work schedule. Some positions may involve travel. This may be a supervisory or non-supervisory position and may be a bargaining unit position, if not excluded by regulation. Relocation expenses will not be authorized for any person(s) selected under this vacancy announcement. Although it is the Library's policy to afford the maximum pay benefit to employees when setting rates of pay, a new appointee who has had no previous Federal service will generally be paid the minimum step of the grade. The Library of Congress is an equal opportunity employer. All who meet the eligibility requirements are encouraged to apply. This agency provides reasonable accommodations to applicants with disabilities. If you need a reasonable accommodation for any part of the application and hiring process, please notify the agency. Decisions to grant reasonable accommodations will be determined on a case-by-case basis. Applicants must submit an appropriate certificate of eligibility when applying for this position. The certificate of disability must verify that the applicant has a severe disability and may be issued by a State Vocational Rehabilitation Office, a Disability Services or Career Services Office of the applicant's college or university, or the Department of Veterans Affairs. The date of certification must be within three (3) years of the vacancy closing date and must be submitted with your application. For more information contact the Library's Office of Equal Employment Opportunity at 202-707-3960 or email spp@loc.gov. FAILURE TO SUBMIT YOUR CERTIFICATION WILL CAUSE YOUR APPLICATION TO NOT BE CONSIDERED UNDER THE SELECTIVE PLACEMENT PROGRAM. The Library of Congress is the national library of the United States and is part of the Legislative Branch of the Federal government. As such, all positions are in the excepted service. Appointment/retention is subject to a favorable evaluation of an appropriate personnel security/suitability investigation. The Library reserves the right to fill a lesser or greater number of vacancies indicated during the life of this vacancy announcement. A “Not to Exceed“ (NTE) status is used to identify an appointment with a specific ending date. However, the Library has the right to separate an employee at any time due to either performance issues or budget constraints.",
+              "KeyRequirements": [],
+              "WithinArea": "False",
+              "CommuteDistance": "0",
+              "ServiceType": "02",
+              "AnnouncementClosingType": "01",
+              "AgencyContactEmail": "JobHelp@loc.gov",
+              "AgencyContactPhone": "202-707-5627",
+              "SecurityClearance": "Other",
+              "DrugTestRequired": "False",
+              "AdjudicationType": [],
+              "TeleworkEligible": false,
+              "RemoteIndicator": false
+            },
+            "IsRadialSearch": false
+          },
+          "AnnouncementClosingType": "01"
+        },
+        "RelevanceRank": 0
+      },
+      {
+        "MatchedObjectId": "852981200",
+        "MatchedObjectDescriptor": {
+          "PositionID": "AFPCDHA-12857027-GS2210",
+          "PositionTitle": "Information Technology Specialist (INFOSEC)",
+          "PositionURI": "https://www.usajobs.gov:443/job/852981200",
+          "ApplyURI": [
+            "https://www.usajobs.gov:443/job/852981200"
+          ],
+          "PositionLocationDisplay": "Multiple Locations",
+          "PositionLocation": [
+            {
+              "LocationName": "Eielson AFB, Alaska",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Alaska",
+              "CityName": "Eielson AFB, Alaska",
+              "Longitude": -147.05869,
+              "Latitude": 64.67567
+            },
+            {
+              "LocationName": "Elmendorf AFB, Alaska",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Alaska",
+              "CityName": "Elmendorf AFB, Alaska",
+              "Longitude": -149.81961,
+              "Latitude": 61.275845
+            },
+            {
+              "LocationName": "Little Rock AFB, Arkansas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Arkansas",
+              "CityName": "Little Rock AFB, Arkansas",
+              "Longitude": -92.14686,
+              "Latitude": 34.91159
+            },
+            {
+              "LocationName": "Davis Monthan AFB, Arizona",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Arizona",
+              "CityName": "Davis Monthan AFB, Arizona",
+              "Longitude": -110.8475,
+              "Latitude": 32.1566
+            },
+            {
+              "LocationName": "Luke AFB, Arizona",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Arizona",
+              "CityName": "Luke AFB, Arizona",
+              "Longitude": -112.36177,
+              "Latitude": 33.53527
+            },
+            {
+              "LocationName": "Beale AFB, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "Beale AFB, California",
+              "Longitude": -121.3373,
+              "Latitude": 39.0943
+            },
+            {
+              "LocationName": "Edwards AFB, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "Edwards AFB, California",
+              "Longitude": -117.8332,
+              "Latitude": 34.8898
+            },
+            {
+              "LocationName": "Los Angeles, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "Los Angeles, California",
+              "Longitude": -118.245,
+              "Latitude": 34.0535
+            },
+            {
+              "LocationName": "March AFB, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "March AFB, California",
+              "Longitude": -117.25073,
+              "Latitude": 33.891403
+            },
+            {
+              "LocationName": "Travis AFB, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "Travis AFB, California",
+              "Longitude": -121.9318,
+              "Latitude": 38.2633
+            },
+            {
+              "LocationName": "Vandenberg AFB, California",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "California",
+              "CityName": "Vandenberg AFB, California",
+              "Longitude": -120.54249,
+              "Latitude": 34.75468
+            },
+            {
+              "LocationName": "Cheyenne Mountain AFB, Colorado",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Colorado",
+              "CityName": "Cheyenne Mountain AFB, Colorado",
+              "Longitude": -104.881,
+              "Latitude": 38.7372
+            },
+            {
+              "LocationName": "Colorado Springs, Colorado",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Colorado",
+              "CityName": "Colorado Springs, Colorado",
+              "Longitude": -104.82173,
+              "Latitude": 38.83311
+            },
+            {
+              "LocationName": "Peterson AFB, Colorado",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Colorado",
+              "CityName": "Peterson AFB, Colorado",
+              "Longitude": -104.7071,
+              "Latitude": 38.8279
+            },
+            {
+              "LocationName": "Dover AFB, Delaware",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Delaware",
+              "CityName": "Dover AFB, Delaware",
+              "Longitude": -75.4701,
+              "Latitude": 39.1274
+            },
+            {
+              "LocationName": "Cape Canaveral, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Cape Canaveral, Florida",
+              "Longitude": -80.6049,
+              "Latitude": 28.3846
+            },
+            {
+              "LocationName": "Cape Canaveral AFS, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Cape Canaveral AFS, Florida",
+              "Longitude": -80.5678,
+              "Latitude": 28.5071
+            },
+            {
+              "LocationName": "Eglin AFB, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Eglin AFB, Florida",
+              "Longitude": -86.5552,
+              "Latitude": 30.4654
+            },
+            {
+              "LocationName": "Homestead AFB, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Homestead AFB, Florida",
+              "Longitude": -80.38872,
+              "Latitude": 25.495316
+            },
+            {
+              "LocationName": "Hurlburt Field, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Hurlburt Field, Florida",
+              "Longitude": -86.6988,
+              "Latitude": 30.4303
+            },
+            {
+              "LocationName": "Patrick AFB, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Patrick AFB, Florida",
+              "Longitude": -80.60844,
+              "Latitude": 28.242105
+            },
+            {
+              "LocationName": "Tyndall AFB, Florida",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Florida",
+              "CityName": "Tyndall AFB, Florida",
+              "Longitude": -85.5674,
+              "Latitude": 30.049
+            },
+            {
+              "LocationName": "Dobbins AFB, Georgia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Georgia",
+              "CityName": "Dobbins AFB, Georgia",
+              "Longitude": -84.5194,
+              "Latitude": 33.9155
+            },
+            {
+              "LocationName": "Moody AFB, Georgia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Georgia",
+              "CityName": "Moody AFB, Georgia",
+              "Longitude": -83.192825,
+              "Latitude": 30.967764
+            },
+            {
+              "LocationName": "Robins AFB, Georgia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Georgia",
+              "CityName": "Robins AFB, Georgia",
+              "Longitude": -83.5919,
+              "Latitude": 32.64
+            },
+            {
+              "LocationName": "Camp H.M. Smith Marine Corp Base, Hawaii",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Hawaii",
+              "CityName": "Camp H.M. Smith Marine Corp Base, Hawaii",
+              "Longitude": -157.9064,
+              "Latitude": 21.38583
+            },
+            {
+              "LocationName": "Hickam AFB, Hawaii",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Hawaii",
+              "CityName": "Hickam AFB, Hawaii",
+              "Longitude": -157.93474,
+              "Latitude": 21.317465
+            },
+            {
+              "LocationName": "Mountain Home AFB, Idaho",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Idaho",
+              "CityName": "Mountain Home AFB, Idaho",
+              "Longitude": -115.86732,
+              "Latitude": 43.049644
+            },
+            {
+              "LocationName": "Scott AFB, Illinois",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Illinois",
+              "CityName": "Scott AFB, Illinois",
+              "Longitude": -89.8714,
+              "Latitude": 38.5483
+            },
+            {
+              "LocationName": "Barksdale AFB, Louisiana",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Louisiana",
+              "CityName": "Barksdale AFB, Louisiana",
+              "Longitude": -93.6116,
+              "Latitude": 32.49727
+            },
+            {
+              "LocationName": "Hanscom AFB, Massachusetts",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Massachusetts",
+              "CityName": "Hanscom AFB, Massachusetts",
+              "Longitude": -71.2763,
+              "Latitude": 42.4587
+            },
+            {
+              "LocationName": "Andrews AFB, Maryland",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Maryland",
+              "CityName": "Andrews AFB, Maryland",
+              "Longitude": -76.8765,
+              "Latitude": 38.8054
+            },
+            {
+              "LocationName": "Linthicum Heights, Maryland",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Maryland",
+              "CityName": "Linthicum Heights, Maryland",
+              "Longitude": -76.66,
+              "Latitude": 39.2015
+            },
+            {
+              "LocationName": "Selfridge ANG Base, Michigan",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Michigan",
+              "CityName": "Selfridge ANG Base, Michigan",
+              "Longitude": -82.8275,
+              "Latitude": 42.6123
+            },
+            {
+              "LocationName": "Whiteman AFB, Missouri",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Missouri",
+              "CityName": "Whiteman AFB, Missouri",
+              "Longitude": -93.572,
+              "Latitude": 38.7401
+            },
+            {
+              "LocationName": "Columbus AFB, Mississippi",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Mississippi",
+              "CityName": "Columbus AFB, Mississippi",
+              "Longitude": -88.4415,
+              "Latitude": 33.6382
+            },
+            {
+              "LocationName": "Minot AFB, North Dakota",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "North Dakota",
+              "CityName": "Minot AFB, North Dakota",
+              "Longitude": -101.352,
+              "Latitude": 48.419
+            },
+            {
+              "LocationName": "Offutt AFB, Nebraska",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Nebraska",
+              "CityName": "Offutt AFB, Nebraska",
+              "Longitude": -95.9223,
+              "Latitude": 41.1203
+            },
+            {
+              "LocationName": "New Boston, New Hampshire",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "New Hampshire",
+              "CityName": "New Boston, New Hampshire",
+              "Longitude": -71.68835,
+              "Latitude": 42.976295
+            },
+            {
+              "LocationName": "McGuire AFB, New Jersey",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "New Jersey",
+              "CityName": "McGuire AFB, New Jersey",
+              "Longitude": -74.589096,
+              "Latitude": 40.021614
+            },
+            {
+              "LocationName": "Cannon AFB, New Mexico",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "New Mexico",
+              "CityName": "Cannon AFB, New Mexico",
+              "Longitude": -103.316,
+              "Latitude": 34.3853
+            },
+            {
+              "LocationName": "Kirtland AFB, New Mexico",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "New Mexico",
+              "CityName": "Kirtland AFB, New Mexico",
+              "Longitude": -106.545,
+              "Latitude": 35.0583
+            },
+            {
+              "LocationName": "Nellis AFB, Nevada",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Nevada",
+              "CityName": "Nellis AFB, Nevada",
+              "Longitude": -114.996,
+              "Latitude": 36.2363
+            },
+            {
+              "LocationName": "Niagara Falls, New York",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "New York",
+              "CityName": "Niagara Falls, New York",
+              "Longitude": -79.0558,
+              "Latitude": 43.0955
+            },
+            {
+              "LocationName": "Wright-Patterson AFB, Ohio",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Ohio",
+              "CityName": "Wright-Patterson AFB, Ohio",
+              "Longitude": -84.05,
+              "Latitude": 39.8333
+            },
+            {
+              "LocationName": "Youngstown, Ohio",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Ohio",
+              "CityName": "Youngstown, Ohio",
+              "Longitude": -80.65079,
+              "Latitude": 41.0981
+            },
+            {
+              "LocationName": "Youngstown, Ohio",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Ohio",
+              "CityName": "Youngstown, Ohio",
+              "Longitude": -80.65079,
+              "Latitude": 41.0981
+            },
+            {
+              "LocationName": "Norman, Oklahoma",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Oklahoma",
+              "CityName": "Norman, Oklahoma",
+              "Longitude": -97.44662,
+              "Latitude": 35.22073
+            },
+            {
+              "LocationName": "Tinker AFB, Oklahoma",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Oklahoma",
+              "CityName": "Tinker AFB, Oklahoma",
+              "Longitude": -97.3894,
+              "Latitude": 35.422
+            },
+            {
+              "LocationName": "Charleston, South Carolina",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "South Carolina",
+              "CityName": "Charleston, South Carolina",
+              "Longitude": -79.9316,
+              "Latitude": 32.781155
+            },
+            {
+              "LocationName": "Shaw AFB, South Carolina",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "South Carolina",
+              "CityName": "Shaw AFB, South Carolina",
+              "Longitude": -80.4677,
+              "Latitude": 33.9741
+            },
+            {
+              "LocationName": "Arnold AFB, Tennessee",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Tennessee",
+              "CityName": "Arnold AFB, Tennessee",
+              "Longitude": -86.0858,
+              "Latitude": 35.3925
+            },
+            {
+              "LocationName": "Dyess AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Dyess AFB, Texas",
+              "Longitude": -99.83814,
+              "Latitude": 32.421364
+            },
+            {
+              "LocationName": "Fort Sam Houston, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Fort Sam Houston, Texas",
+              "Longitude": -98.4489,
+              "Latitude": 29.4491
+            },
+            {
+              "LocationName": "Goodfellow AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Goodfellow AFB, Texas",
+              "Longitude": -100.40798,
+              "Latitude": 31.342018
+            },
+            {
+              "LocationName": "Kelly AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Kelly AFB, Texas",
+              "Longitude": -98.58329,
+              "Latitude": 29.38096
+            },
+            {
+              "LocationName": "Lackland AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Lackland AFB, Texas",
+              "Longitude": -98.6181,
+              "Latitude": 29.3861
+            },
+            {
+              "LocationName": "Laughlin AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Laughlin AFB, Texas",
+              "Longitude": -100.79517,
+              "Latitude": 29.354046
+            },
+            {
+              "LocationName": "Randolph AFB, Texas",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Texas",
+              "CityName": "Randolph AFB, Texas",
+              "Longitude": -98.2775,
+              "Latitude": 29.5275
+            },
+            {
+              "LocationName": "Hill AFB, Utah",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Utah",
+              "CityName": "Hill AFB, Utah",
+              "Longitude": -111.9896,
+              "Latitude": 41.1251
+            },
+            {
+              "LocationName": "Alexandria, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Alexandria, Virginia",
+              "Longitude": -77.04308,
+              "Latitude": 38.804565
+            },
+            {
+              "LocationName": "Arlington, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Arlington, Virginia",
+              "Longitude": -77.086296,
+              "Latitude": 38.89051
+            },
+            {
+              "LocationName": "Dahlgren, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Dahlgren, Virginia",
+              "Longitude": -77.0468,
+              "Latitude": 38.331
+            },
+            {
+              "LocationName": "Fort Eustis, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Fort Eustis, Virginia",
+              "Longitude": -76.5892,
+              "Latitude": 37.1292
+            },
+            {
+              "LocationName": "Langley AFB, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Langley AFB, Virginia",
+              "Longitude": -76.3667,
+              "Latitude": 37.0771
+            },
+            {
+              "LocationName": "Pentagon, Arlington, Virginia",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Virginia",
+              "CityName": "Pentagon, Arlington, Virginia",
+              "Longitude": -77.06204,
+              "Latitude": 38.86163
+            },
+            {
+              "LocationName": "Fairchild AFB, Washington",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Washington",
+              "CityName": "Fairchild AFB, Washington",
+              "Longitude": -117.6556,
+              "Latitude": 47.615
+            },
+            {
+              "LocationName": "McChord AFB, Washington",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Washington",
+              "CityName": "McChord AFB, Washington",
+              "Longitude": -122.50157,
+              "Latitude": 47.128696
+            },
+            {
+              "LocationName": "Warren AFB, Wyoming",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Wyoming",
+              "CityName": "Warren AFB, Wyoming",
+              "Longitude": -104.86086,
+              "Latitude": 41.155052
+            }
+          ],
+          "OrganizationName": "Department of the Air Force Headquarters",
+          "DepartmentName": "Department of the Air Force",
+          "JobCategory": [
+            {
+              "Name": "Information Technology Management",
+              "Code": "2210"
+            }
+          ],
+          "JobGrade": [
+            {
+              "Code": "GS"
+            }
+          ],
+          "PositionSchedule": [
+            {
+              "Name": "",
+              "Code": "1"
+            }
+          ],
+          "PositionOfferingType": [
+            {
+              "Name": "",
+              "Code": "15327"
+            }
+          ],
+          "QualificationSummary": "In order to qualify, you must meet the specialized experience requirements described in the Office of Personnel Management (OPM) Qualification Standards for General Schedule Positions, Individual Occupational Requirements for Information Technology (IT) Management Series, 2210 (Alternative A). BASIC REQUIREMENTS: Undergraduate or Graduate Education: Degree in computer science, engineering, information science, information systems management, mathematics, operations research, statistics, or technology management or degree that provided a minimum of 24 semester hours in one or more of the fields identified above and required the development or adaptation of applications, systems or networks. GS-09: Master's degree or equivalent graduate degree or two full years of progressively higher level graduate education leading to a master's degree or equivalent graduate degree GS-11: Ph.D. or equivalent doctoral degree or three full years of progressively higher level graduate education leading to a Ph.D. or equivalent doctoral degree OR For grade levels 9 through 14, your resume must reflect information technology related experience in the federal service or private or public sector demonstrating the following four competencies: a) Attention to Detail - Is thorough when performing work and conscientious about attending to detail; b) Customer Service - Works with clients and customers (that is, any individuals who use or receive the services or products that your work unit produces, including the general public, individuals who work in the agency, other agencies, or organizations outside the Government) to assess their needs, provide information or assistance, resolve their problems, or satisfy their expectations; knows about available products and services; is committed to providing quality products and services; c) Oral Communication - expresses information (for example, ideas or facts) to individuals or groups effectively, taking into account the audience and nature of the information (for example, technical, sensitive, controversial); makes clear and convincing oral presentations; listens to others, attends to nonverbal cues, and responds appropriately AND d) Problem Solving - Identifies problems; determines accuracy and relevance of information; uses sound judgment to generate and evaluate alternatives, and to make recommendations. SPECIALIZED EXPERIENCE: In additional to the basic requirements above, applicants for the GS-9 and above must meet the one year of specialized experience listed below. For GS-9: One year of specialized experience equivalent to the GS-07 that demonstrated knowledge of computer requirements and techniques in carrying out project assignments consisting of several related tasks, such as development of minor modifications to parts of a system on the basis of detailed specifications provided. The assignments must have shown completion of the following, or the equivalent: Analysis of the interrelationships of pertinent components of the system; planning the sequence of actions necessary to accomplish the assignment; and personal responsibility for at least a segment of the overall project. For GS-11: One year of specialized experience equivalent to the GS-09 that demonstrated accomplishment of computer project assignments that required a range of knowledge of computer requirements and techniques. For example, experience in developing modifications to parts of a system that required significant revisions in the logic or techniques used in the original development. Accomplishments, in addition to those noted for the GS-9, normally involve the following, or the equivalent: Knowledge of the customary approaches, techniques, and requirements appropriate to an assigned computer applications area or computer specialty area in an organization; planning the sequence of actions necessary to accomplish the assignment where this entailed coordination with others outside the organizational unit and development of project controls; and adaptation of guidelines or precedents to the needs of the assignment. For GS-12: One year of specialized experience equivalent to the GS-11 level that demonstrated experience in planning, analyzing, acquisition, designing, developing, implementing, quality assurance, configuration, integrating, maintenance testing, operational integrity, and/or management of systems used. For GS-13: One year of specialized experience equivalent to the GS-12 that demonstrated experience in providing technical expertise on architecture, acquisition, certification and accreditation, systems tailoring for an organization mission; planning, organizing and managing the IT requirements and assessing long and short-term IT integration and migration capabilities; planning current and future system architecture requirements. For GS-14: One year of specialized experience equivalent to the GS-13 that demonstrated experience in serving as senior IT specialist and consultant to senior management in support of organization wide IT policy, budget and plans for systems development, acquisition, installation, operation and maintenance; planning, organizing, and overseeing the activities of the IT organization and reviewing policies, procedures, mission objectives and organization design for the staff; serving as the recognized authority in the analysis and direction of IT programs and issues; and in researching, interpreting, analyzing and applying operations and security guidance. Click on the following link to view occupational requirements for this position: http://www.opm.gov/policy-data-oversight/classification-qualifications/general-schedule-qualification-standards/2200/information-technology-it-management-series-2210-alternative-a/ KNOWLEDGE, SKILLS AND ABILITIES (KSAs): 1. Knowledge of Information Technology principles, concepts, practices, systems software, database software, and immediate access storage technology to carry out activities. 2. Ability to assess and advise on a variety of sources and procedures and methods for systems and applications. 3. Knowledge of system requirements and techniques for planning current and future system architecture requirements. 4. Knowledge of commonly applied principles, concepts, and methodologies, operating characteristics and capabilities of systems, media, equipment, and related software systems, processes and procedures. PART-TIME OR UNPAID EXPERIENCE: Credit will be given for appropriate unpaid and or part-time work. You must clearly identify the duties and responsibilities in each position held and the total number of hours per week. VOLUNTEER WORK EXPERIENCE: Refers to paid and unpaid experience, including volunteer work done through National Service Programs (i.e., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student and social). Volunteer work helps build critical competencies, knowledge and skills that can provide valuable training and experience that translates directly to paid employment. You will receive credit for all qualifying experience, including volunteer experience.",
+          "PositionRemuneration": [
+            {
+              "MinimumRange": "52727",
+              "MaximumRange": "139684",
+              "RateIntervalCode": "PA",
+              "Description": "Per Year"
+            }
+          ],
+          "PositionStartDate": "2025-12-22T00:00:00.0000",
+          "PositionEndDate": "2026-12-21T23:59:59.9970",
+          "PublicationStartDate": "2025-12-22T00:00:00.0000",
+          "ApplicationCloseDate": "2026-12-21T23:59:59.9970",
+          "PositionFormattedDescription": [
+            {
+              "Label": "Dynamic Teaser",
+              "LabelDescription": "Hit highlighting for keyword searches."
+            }
+          ],
+          "UserArea": {
+            "Details": {
+              "JobSummary": "Click on \"Learn more about this agency\" button below for IMPORTANT additional information. Positions may be filled as permanent, temporary or term with a full-time work schedule. This is a Direct Hire Solicitation. This public notice is to gather applications that may or may not result in a referral or selection.",
+              "WhoMayApply": {
+                "Name": "",
+                "Code": ""
+              },
+              "LowGrade": "9",
+              "HighGrade": "14",
+              "PromotionPotential": "14",
+              "OrganizationCodes": "DD/AF00",
+              "Relocation": "False",
+              "HiringPath": [
+                "public"
+              ],
+              "HiringPathDisplay": [
+                "Open to the public"
+              ],
+              "MCOTags": [],
+              "TotalOpenings": "Few",
+              "AgencyMarketingStatement": "The mission of the United States Air Force is: To fly, fight, and win ... Airpower anytime, anywhere. To achieve that mission, the Air Force has a vision of Global Vigilance, Global Reach and Global Power. That vision orbits around three core competencies: Developing Airmen, Technology-to-Warfighting and Integrating Operations. Core competencies and distinctive capabilities are based on a shared commitment to three core values -- integrity first, service before self, and excellence in all we do. For EHA Positions: These positions are being filled under Expedited Hiring Authority (EHA) for Defense Acquisition Workforce Positions and Health Care Occupations. The Secretary of the Air Force has delegated authority by the Office Of the Secretary of Defense to directly appoint individuals to select defense acquisition workforce positions, or 'EHA Acquisition,' pursuant to the Defense Acquisition Workforce Improvement Act (DAWIA) and certain health care occupations, or 'EHA Medical.' Positions are located Air Force-Wide. Positions may be filled as permanent or term with a full-time or part-time work schedule. Pay will vary by geographic location. This Public Notice is to gather applications which may or may not result in a referral or selection. This Public Notice may be used to fill positions in other equivalent pay systems (i.e., NH, NJ, NK). See \"Additional Information\" in this announcement for further information regarding DHA Positions.",
+              "TravelCode": "0",
+              "ApplyOnlineUrl": "https://apply.usastaffing.gov/Application/Apply",
+              "DetailStatusUrl": "https://apply.usastaffing.gov/Application/ApplicationStatus",
+              "MajorDuties": [
+                "****Duties and responsibilities vary and may increase according to grade level****",
+                "Utilize knowledge of IT principles, methods and security regulations and policies to carry out established base-wide policy to administer the INFOSEC (also known as COMPUSEC) program.",
+                "Implement procedures to ensure protection of information transmitted to the installation, among organizations on the installation, and from the installation on the local or wide area networks, the world-wide-web, or other communications modes.",
+                "Administer the Communications Security (COMSEC) program. Control and protect all cryptographic material and administer the Cryptographic Access Program (CAP).",
+                "Conduct semi-annual functional reviews of all COMSEC user accounts, inspecting COMSEC facilities, reviewing procedures, and auditing all cryptographic holdings.",
+                "Administer the COMPUSEC Program and protect Information Technology (IT) assets against unauthorized, accidental, or deliberate modification, disclosure, and destruction of data."
+              ],
+              "Education": "IF USING EDUCATION TO QUALIFY: If position has a positive degree requirement or education forms the basis for qualifications, you MUST submit transcripts with the application. Official transcripts are not required at the time of application; however, if position has a positive degree requirement, qualifying based on education alone or in combination with experience; transcripts must be verified prior to appointment. An accrediting institution recognized by the U.S. Department of Education must accredit education. Click here to check accreditation. FOREIGN EDUCATION: Education completed in foreign colleges or universities may be used to meet the requirements. You must show proof the education credentials have been deemed to be at least equivalent to that gained in conventional U.S. education program. It is your responsibility to provide such evidence when applying.",
+              "Requirements": "",
+              "Evaluations": "Your latest resume will be used to determine your qualifications. Your application package (resume, supporting documents, and responses to the questionnaire) will be used to determine your eligibility, qualifications, and quality ranking for this position. Please follow all instructions carefully. Errors or omissions may affect your rating or consideration for employment. Your responses to the questionnaire may be compared to the documents you submit. The documents you submit must support your responses to the online questionnaire. If your application contradicts or does not support your questionnaire responses, you will receive a rating of \"not qualified\" or \"insufficient information\" and you will not receive further consideration for this job. Applicants who disqualify themselves will not be evaluated further.",
+              "HowToApply": "The complete Application Package must be submitted by 11:59 PM (ET) on 12/21/2026. To preview the Application Questionnaire, please click the following link: https://apply.usastaffing.gov/ViewQuestionnaire/12857027 To begin the process, click the Apply Online button to create an account or log in to your existing USAJOBS account. Follow the prompts to complete the application questionnaire. Please ensure you click the Submit My Application button at the end of the process. To apply for this position, you must provide a complete Application Package which includes: 1. Your Resume. If you submit more than one resume, only the most recent will be reviewed. The \"most recent\" is considered the resume with the latest timestamp. Resumes may not exceed two pages. The two-page resume ensures the most relevant experience is reviewed and considered, which is a common practice in both the public and private sectors. Resumes exceeding two pages will be removed from consideration. Additional information on how to complete or update your resume may be located here. For qualification determination your resume must contain hours worked per week and dates of employment (i.e., month/year to month/year or month/year to present). If your resume does not contain this information, your application may be marked as insufficient, and you will not receive consideration for this position. If you are a current Federal employee or previous Federal employee, provide your pay plan, series and grade, i.e. GS-0301-09. Current Federal Civilian Employees may list any relevant performance related rating (given within the last three years) and/or incentive awards in your resume. Do NOT include photographs, inappropriate material, inappropriate content, nor personal information such as age, gender, religion, social security number, etc., on your resume. If the resume you submit contains such information you will not be considered for this vacancy. Your name, first and last, MUST be included on your resume. 2. A complete Application Questionnaire 3. Additional Required Documents (see Required Documents section). Ensure all submitted documents contain your full name. 4. Help recruiters find you. Make your resume and profile searchable, which means recruiters may contact you about possible jobs. Additional information may be located here. PLEASE NOTE: It is the applicant's responsibility to verify that information entered and/or uploaded, (i.e., resume) is received, accurate, and submitted by the closing date. You may verify your documents have been processed with your application package successfully. You can access your USAJOBS account to do so by clicking here. Uploaded documents may take up to one hour to clear the virus scan. Human Resources WILL NOT modify or change any answers submitted by an applicant.",
+              "WhatToExpectNext": "After you submit your application, you will be contacted if further evaluation or interviews are required. Your application will remain active through the open period of this Public Notice. Once this Public Notice closes, you must reapply.",
+              "RequiredDocuments": "The following documents are required and must be provided with your application for this Public Notice. Applicants who do not submit required documentation to determine eligibility and qualifications will be eliminated from consideration. Other documents may be required based on the eligibility/eligibilities you are claiming. Click here to view the AF Civilian Employment Eligibility Guide and the required documents you must submit to substantiate the eligibilities you are claiming. Online Application - Questionnaire Resume: Your resume may NOT exceed two pages, and the font size should not be smaller than 10 pts. You will not be considered for this vacancy if your resume is illegible/unreadable. Additional information on resume requirements can be located under \"How To Apply\". Transcripts/Registration/License: If qualifying on education/position requires education, you must submit copies of your transcripts and if required for the position, submit an active, current registration/license. Veterans: If claiming 30% Disabled Veteran or Veteran's Preference - Submit VOW certification memo or copy of the official DD Form 214, which must include the character of service (i.e., with an honorable or general discharge). This will be annotated in block 24 on member copy 2, 4, or 7 of the DD Form 214. If claiming 30% Disabled Veteran, you must also submit a VA Letter or a disability determination from a branch of the Armed Forces. NOTE: All veterans claiming 10-point preference must also submit a SF-15 form. ACTIVE DUTY SERVICE MEMBERS: The VOW Act requires federal agencies to treat an eligible active duty service member as a veteran, disabled veteran, and preference eligible (as applicable) when applying for civil service positions before the effective release or discharge date. Appointment of military members before the release or discharge date is permissible if the member is on terminal leave. At the time the active duty member applies for a civil position, he or she must submit a \"certification\" memo in lieu of a DD Form 214, Certificate of Release or Discharge from Active Duty. Active duty members applying for a civil service position without submitting a valid certification memo or DD Form 214 with their application will render the member ineligible for the position. The certification memo must originate from the member's military service branch on official letterhead and contain the following: Name/Rank/Grade of Service Member Branch of Armed Forces Dates of Active Service (Start and End Date(s) Expected Date of Discharge/Release from Active Duty Terminal leave start date (if applicable) Expected character of service/discharge and type of separation (i.e. separation or retirement) Must be certified within 120 days of anticipated discharge Signature by, or by direction of the adjutant, personnel office, unit commander, or higher headquarters commander. Note: The VOW Act provides tentative preference. If appointed, a DD Form 214 must be submitted upon receipt.",
+              "Benefits": "",
+              "BenefitsUrl": "https://www.usajobs.gov/Help/working-in-government/benefits/",
+              "BenefitsDisplayDefaultText": true,
+              "OtherInformation": "For Direct Hire (DHA) Positions: This is a Direct Hire Public Notice, under this recruitment procedure applications will be accepted for each location/ installation identified in this Public Notice and selections are made for vacancies as they occur. There may or may not be actual/projected vacancies at the time you submit your application. Interagency Career Transition Assistance Program (ICTAP): For information on how to apply as an ICTAP eligible click here. To be well-qualified and exercise selection priority for this vacancy, displaced Federal employees must be rated in the \"Highly Qualified\" or \"Best Qualified\" Category on the rating criteria for this vacancy. You must submit a copy of the agency notice, your most recent performance rating, and your most recent SF-50 noting position, grade level, and duty location. Employed Annuitants (Reemployed Annuitants): Applicants in receipt of an annuity based on civilian employment in the Federal Service are subject to the DoD Policy on The Employment of Annuitants. Click here for more information. Temporary and Term Appointments: If you are selected for a temporary or term position in the competitive service, your appointment may be extended to the maximum period allowed by law without further competition. Additionally, if you are serving on a term appointment in the competitive service, you may be converted to a career or career-conditional appointment without further competition. NOTE: Current federal civilian employees may apply for this position and if selected, a break in service of at least 3 days may be required prior to appointment to this position. Selective Service: Males born after 12-31-59 must be registered or exempt from Selective Service. For additional information, click here. Direct Deposit: All federal employees are required to have direct deposit. Disabled veteran leave is available to a Federal employee hired on/after 5 Nov 2016, who is a veteran with a service-connected disability rating of 30% or more. For more information, click here. If you have questions regarding this announcement and have hearing or speech difficulties click here. Tax Law Impact for PCS: On 22-Dec-2017, Public Law 115-97 - the \"Tax Cuts and Jobs Act of 2017\" suspended qualified moving expense deductions along with the exclusion for employer reimbursements and payments of moving expenses effective 01-Jan-2018 for tax years 2018 through 2025. When you perform a Civilian Permanent Change of Station (PCS) with the government, the Internal Revenue Service (IRS) considers the majority of your entitlements to be taxable. Visit GSA Bulletin FTR 20-04 here for additional information.",
+              "KeyRequirements": [],
+              "WithinArea": "False",
+              "CommuteDistance": "0",
+              "ServiceType": "01",
+              "AnnouncementClosingType": "01",
+              "AgencyContactEmail": "DO.NOT.EMAIL@CALL.ONLY",
+              "AgencyContactPhone": "1-800-525-0102",
+              "SecurityClearance": "Not Required",
+              "DrugTestRequired": "False",
+              "AdjudicationType": [],
+              "TeleworkEligible": false,
+              "RemoteIndicator": false,
+              "FinancialDisclosure": false,
+              "BargainingUnitStatus": false
+            },
+            "IsRadialSearch": false
+          },
+          "AnnouncementClosingType": "01"
+        },
+        "RelevanceRank": 0
+      },
+      {
+        "MatchedObjectId": "855330700",
+        "MatchedObjectDescriptor": {
+          "PositionID": "SH12871114-26-DHA",
+          "PositionTitle": "JAVA Angular Full Stack Web Application Developer",
+          "PositionURI": "https://www.usajobs.gov:443/job/855330700",
+          "ApplyURI": [
+            "https://www.usajobs.gov:443/job/855330700"
+          ],
+          "PositionLocationDisplay": "Woodlawn, Maryland",
+          "PositionLocation": [
+            {
+              "LocationName": "Woodlawn, Maryland",
+              "CountryCode": "United States",
+              "CountrySubDivisionCode": "Maryland",
+              "CityName": "Woodlawn, Maryland",
+              "Longitude": -76.7374,
+              "Latitude": 39.317
+            }
+          ],
+          "OrganizationName": "Social Security Administration",
+          "DepartmentName": "Other Agencies and Independent Organizations",
+          "SubAgency": "Chief Information Officer (CIO)",
+          "JobCategory": [
+            {
+              "Name": "Information Technology Management",
+              "Code": "2210"
+            }
+          ],
+          "JobGrade": [
+            {
+              "Code": "GS"
+            }
+          ],
+          "PositionSchedule": [
+            {
+              "Name": "Flextime and Alternative Work Schedule are available",
+              "Code": "1"
+            }
+          ],
+          "PositionOfferingType": [
+            {
+              "Name": "",
+              "Code": "15317"
+            }
+          ],
+          "QualificationSummary": "Resumes exceeding two pages in length will not be considered, please visit the new resume guidance for more information. READ ALL SECTIONS OF THIS ANNOUNCEMENT IN ITS ENTIRETY. THIS INFORMATION IS CRUCIAL TO SUBMITTING A SUCCESSFUL APPLICATION. Applicants must qualify for the series and grade of the posted position. Experience must be IT related; the experience may be demonstrated by paid or unpaid experience and/or completion of specific, intensive training (for example, IT certification), as appropriate. Your resume must provide sufficient experience and/or education, knowledge, skills, abilities, and proficiency of any required competencies to perform the specific position for which you are applying. To qualify for the 2210 IT Specialist series, the applicant must demonstrate the following competencies: Attention to Detail - Is thorough when performing work and conscientious about attending to detail. Customer Service - Works with clients and customers (that is, any individuals who use or receive the services or products that your work unit produces, including the general public, individuals who work in the agency, other agencies, or organizations outside the Government) to assess their needs, provide information or assistance, resolve their problems, or satisfy their expectations; know about available products and services; and is committed to providing quality products and services. Oral Communication - Expresses information (for example, ideas or facts) to individuals or groups effectively, taking into account the audience and nature of the information (for example, technical, sensitive, controversial); makes clear and convincing oral presentations; listens to others, attends to nonverbal cues, and responds appropriately. Problem Solving - Identifies problems; determines accuracy and relevance of information; uses sound judgment to generate and evaluate alternatives, and to make recommendations. Minimum Qualifications: Grade 13 (Bargaining Unit Position): Applicants for this GS-13 position must have specialized experience at or equivalent to the GS-12 level or above, which is in or related to the work of the position to be filled, that has equipped the applicant with the particular knowledge, skill and abilities to successfully perform the duties of the position. Such IT-related experience must include: Developing service-oriented web applications and APIs in an agile environment using frameworks such as Angular or Spring Boot Coordinating development efforts to ensure project completion and implementation OR leading technical discussions for enterprise-level IT projects Developing object-oriented software that interfaces with Relational databases and leverages Continuous Integration/Continuous Delivery technology to comply with modern development standards. Minimum Qualifications: Grade 14: Applicants for this GS-14 position must have specialized experience at or equivalent to the GS-13 level or above, which is in or related to the work of the position to be filled, that has equipped the applicant with the particular knowledge, skill and abilities to successfully perform the duties of the position. Such IT-related experience must include: Advanced proficiency developing service-oriented web applications and APIs in an agile environment using Frameworks such as Angular or Spring Boot, languages such as Java, Node.js, APIs such as RESTful/SOAP and Platforms such as AWS/PaaS Advanced proficiency developing object-oriented software that interfaces with database technologies such as DB2, SQL, MongoDB, PostgreSQL, and leverages Continuous Integration/Continuous Delivery technology to comply with modern development standards. Advanced experience leading and coordinating development efforts to ensure project completion and implementation OR leading technical discussions for enterprise-level IT projects; and Hands-on experience with collaborative development tools such as Git, Bitbucket, and Visual Studio. Minimum Qualifications: Grade 15: Applicants for this GS-15 position must have specialized experience at or equivalent to the GS-14 level or above, which is in or related to the work of the position to be filled, that has equipped the applicant with the particular knowledge, skill and abilities to successfully perform the duties of the position. Such IT-related experience must include: Expertly developing service-oriented web applications and APIs in an agile environment using advanced frameworks such as Angular and Spring Boot, programming languages including Java and Node.js, and platforms like AWS/PaaS. Advanced proficiency in designing and implementing object-oriented software solutions interfacing with databases such as DB2, SQL, MongoDB, and PostgreSQL, and leveraging CI/CD technologies to meet modern development standards. Leading and coordinating complex development efforts for enterprise-level IT projects at an expert level, including facilitating technical discussions and ensuring successful project completion and implementation. Collaborating with cross-functional teams to define, design, and deliver new features; participated in code reviews; and communicated complex technical concepts to executives and team members in clear, accessible terms, consistently demonstrating advanced expertise. Integrating COTS solutions into robust, API-driven architectures for real-time system connectivity; expertly resolved production issues using appropriate tools; applied advanced scaled agile practices and real-time data processing skills. PLEASE NOTE: This specialized experience is REQUIRED and must be explicitly documented/described in your resume, or you will be disqualified from further consideration You may be asked to take a Code Signal online assessment. Qualification standards and additional information for this position can be found here: http://www.opm.gov/policy-data-oversight/classification-qualifications/general-schedule-qualification-standards/2200/information-technology-it-management-series-2210-alternative-a/",
+          "PositionRemuneration": [
+            {
+              "MinimumRange": "121785",
+              "MaximumRange": "197200",
+              "RateIntervalCode": "PA",
+              "Description": "Per Year"
+            }
+          ],
+          "PositionStartDate": "2026-01-26T00:00:00.0000",
+          "PositionEndDate": "2026-10-31T23:59:59.9970",
+          "PublicationStartDate": "2026-01-26T00:00:00.0000",
+          "ApplicationCloseDate": "2026-10-31T23:59:59.9970",
+          "PositionFormattedDescription": [
+            {
+              "Label": "Dynamic Teaser",
+              "LabelDescription": "Hit highlighting for keyword searches."
+            }
+          ],
+          "UserArea": {
+            "Details": {
+              "JobSummary": "IT Specialist (APPSW), JAVA Angular Full Stack Web Application Developer positions are being filled through the Office of Personnel Management's delegated Direct Hire Authority, open to all U.S. citizens. Selections made will be processed as new appointments to the civil service. Current civil service employees would, therefore, be given new appointments to the civil service. Under the provisions of the Direct Hire Authority, Veterans Preference and the \"Rule of Many\" do not apply.",
+              "WhoMayApply": {
+                "Name": "",
+                "Code": ""
+              },
+              "LowGrade": "13",
+              "HighGrade": "15",
+              "PromotionPotential": "None",
+              "SubAgencyName": "Chief Information Officer (CIO)",
+              "OrganizationCodes": "OT/SZ00",
+              "Relocation": "False",
+              "HiringPath": [
+                "fed-transition",
+                "public"
+              ],
+              "HiringPathDisplay": [
+                "Career transition (CTAP, ICTAP, RPL)",
+                "Open to the public"
+              ],
+              "MCOTags": [
+                "TechToGov"
+              ],
+              "TotalOpenings": "Many",
+              "AgencyMarketingStatement": "Are you ready to make a real impact at the Social Security Administration? Join our forward-thinking technology team as a Java/Angular Full Stack Web Application Developer and help shape the future of digital services for more than 330 million Americans. We're building a team of top-tier developers-those who excel at solving complex challenges and delivering scalable, enterprise-level web applications. Whether you're a seasoned expert ready to drive innovation or an early-career developer eager to learn from the best, we want you to be part of our mission to deliver cutting-edge technology and exceptional service. We value developers who are passionate about creating seamless user experiences and robust backend solutions. If you thrive in a fast-paced, collaborative environment and are excited to work with the latest technologies, this is the place for you. We are especially interested in developers who understand how Artificial Intelligence (AI) can be leveraged to revamp and optimize existing processes, making our systems more efficient and effective for both customers and employees. If you're ready to take your career to the next level-whether you're a proven leader or an ambitious learner-apply today and help us build the future of digital government services! Recruitment incentive may be authorized. Outstationing may be available at the GS15 level.",
+              "TravelCode": "0",
+              "ApplyOnlineUrl": "https://apply.usastaffing.gov/Application/Apply",
+              "DetailStatusUrl": "https://apply.usastaffing.gov/Application/ApplicationStatus",
+              "MajorDuties": [
+                "This announcement serves as public notice. Applications submitted be placed into a pool and will remain on file for selection as positions become available.",
+                "Vacancies may be filled for up to 6 months after the closing date of this announcement. Applicants may not receive notifications of referral status until the full 6-month eligibility period has elapsed.",
+                "Positions filled with applications from this pool will be placed into positions where artificial intelligence duties occupy the majority of the work performed."
+              ],
+              "Education": "",
+              "Requirements": "",
+              "Evaluations": "The evaluation you receive is based on your responses to the online assessment questions completed during the application process. Please make sure you answer all questions and follow all instructions carefully. Errors or omissions may affect your evaluation. Information not specifically stated in your resume cannot be assumed. Information that is copied or restated language from the vacancy announcement or rating criteria will not be considered. If this occurs, you may be found ineligible. You may be asked to take an online technical assessment test as part of the application process. The technical assessment will come from a third party called CodeSignal, a widely used coding assessment platform that has been adopted and validated by the Office of Personnel Management (OPM) for federal IT hiring. This assessment is a live coding exercise completed in a proctored online environment. The assessment is designed to evaluate practical programming skills relevant to the position. If you receive an email to take the CodeSignal assessment, this assessment is one component of our evaluation process, not the sole determining factor. Your application, resume, and other qualifications remain an important part of our review",
+              "HowToApply": "Please read the entire announcement and all the instructions before you begin an application. To apply for this position, you must complete the initial online application, to include submission of the required documentation specified in the Required Documents section below. The complete application package must be submitted by 11:59 PM (ET) on the cut-off date or closing date of the announcement to receive consideration. The application process is as follows: To begin the application process, click the Apply Online button. Answer the questions presented in the application and attach all necessary supporting documentation. Click the Submit Application button prior to 11:59PM (ET) on the cut-off date or announcement closing date. Announcement cutoff dates: 1/29/26 2/05/26 2/12/26 2/19/26 2/26/26 3/05/26 3/12/26 3/19/26 3/26/26 4/02/26 4/09/26 4/16/26 4/23/26 4/30/26 5/07/26 5/14/26 5/21/26 5/28/26 6/04/26 6/11/26 6/18/26 6/25/26 7/02/26 7/09/26 7/16/26 7/23/26 8/06/26 8/20/26 9/03/26 9/17/26 9/24/26 10/1/26 10/8/26 10/15/26 10/22/26 10/29/26 10/31/26 You may update your application, including supporting documentation, at any time during the announcement open period by returning to your USAJOBS account. There you will find a record of your application, the application status, and an option to Update Application. This option will no longer be available once the announcement has closed. To verify the status of your application both during and after the announcement open period, log into your USAJOBS account. All of your applications will appear on the Welcome page. The application record in your USAJOBS account provides an Additional Application Information page that provides information regarding the documentation you submitted and any correspondence we have sent related to this application. The Application Status will appear along with the date your application was last updated. For information on what each Application Status means, visit https://www.usajobs.gov/Help/how-to/application/status/. If you use assistive software or an adaptive device, or you are experiencing some other type of technical difficulty and/or otherwise require assistance with the application process, please contact Careers at SSA at Careers@ssa.gov. Individuals with disabilities may also call us via Federal Relay using the (voice) contact telephone provided. Due to our security procedures, our office will not accept any applications submitted via email or standard mail. The email address is listed only for inquiries about the position or the How to Apply process.",
+              "WhatToExpectNext": "Once you have successfully submitted your application materials, you can expect to receive an email notification acknowledging receipt of your application. The hiring office will contact candidates directly for interviews, if desired. Interviews may be conducted via video conferencing software, if technically feasible. To check the status of your application or return to a previous or incomplete application, log in to your USAJOBS account, select Application Status, and click on the more information link under the application status for this position.",
+              "RequiredDocuments": "To apply for this position, you must submit a complete Application Package which includes: Your resume showing work schedule, hours worked per week, dates of employment and duties performed. Other documents supporting qualifications and/or preference, if applicable. You must also submit ALL supporting documentation by the closing date of the vacancy announcement to claim certain types of preference. Resumes exceeding two pages will not be considered. To be considered, your resume must: Clearly demonstrate your qualifications for the position Include your contact information We recommend using a clear, easy-to-read format and focusing on information most relevant to the job announcement. INTERAGENCY CAREER TRANSITION ASSISTANCE PLAN (ICTAP): ICTAP provides eligible displaced Federal competitive service employees with selection priority for competitive service vacancies. To receive selection priority, candidates must meet the requirements for the Well Qualified. Well-qualified is defined as having knowledge, skills, and abilities that clearly exceed the minimum qualification requirements for the position. Candidates must also provide: proof of eligibility with your application. Such proof may include a copy of your written notification of ICTAP eligibility or a copy of your separation Notice of Personnel Action, (SF-50); and proof of your most recent performance rating of at least \"fully successful\" (Level III) or equivalent. For more information visit http://www.opm.gov/rif/employee_guides/career_transition.asp. Veteran's preference does not apply under this Direct Hire Authority for these positions. Failure to provide all of the required information as stated in this vacancy announcement may result in an ineligible rating or may affect the overall rating.",
+              "Benefits": "",
+              "BenefitsUrl": "https://www.opm.gov/healthcare-insurance/Guide-Me/New-Prospective-Employees/",
+              "BenefitsDisplayDefaultText": true,
+              "OtherInformation": "See announcement cutoff dates below under How to Apply Are you ready to make a real impact at the Social Security Administration? Join our forward-thinking technology team as a Java/Angular Full Stack Web Application Developer and help shape the future of digital services for more than 330 million Americans. We're building a team of top-tier developers-those who excel at solving complex challenges and delivering scalable, enterprise-level web applications. Whether you're a seasoned expert ready to drive innovation or an early-career developer eager to learn from the best, we want you to be part of our mission to deliver cutting-edge technology and exceptional service. We value developers who are passionate about creating seamless user experiences and robust backend solutions. If you thrive in a fast-paced, collaborative environment and are excited to work with the latest technologies, this is the place for you. We are especially interested in developers who understand how Artificial Intelligence (AI) can be leveraged to revamp and optimize existing processes, making our systems more efficient and effective for both customers and employees. If you're ready to take your career to the next level-whether you're a proven leader or an ambitious learner-apply today and help us build the future of digital government services! Recruitment incentive may be authorized. Outstationing may be available at the GS15 level. This announcement serves as public notice. Applications submitted be placed into a pool and will remain on file for selection as positions become available. Vacancies may be filled for up to 6 months after the closing date of this announcement. Applicants may not receive notifications of referral status until the full 6-month eligibility period has elapsed. Applications may be gathered from additional recruitment sources. Additional selections may be made for this vacancy six months from the closing date of this announcement. This Direct Hire announcement may be used to fill the same or similar position in another office. Selective Service: If you are a male applicant born after December 31, 1959, you must certify that you have registered with the Selective Service System, or are exempt from having to do so under the Selective Service Law. See www.sss.gov.",
+              "KeyRequirements": [],
+              "WithinArea": "False",
+              "CommuteDistance": "0",
+              "ServiceType": "01",
+              "AnnouncementClosingType": "01",
+              "AgencyContactEmail": "Careers@ssa.gov",
+              "SecurityClearance": "Not Required",
+              "DrugTestRequired": "False",
+              "PositionSensitivitiy": "High Risk (HR)",
+              "AdjudicationType": [
+                "Suitability/Fitness"
+              ],
+              "TeleworkEligible": false,
+              "RemoteIndicator": false,
+              "FinancialDisclosure": true,
+              "BargainingUnitStatus": false
+            },
+            "IsRadialSearch": false
+          },
+          "AnnouncementClosingType": "01"
+        },
+        "RelevanceRank": 0
+      }
+    ],
+    "UserArea": {
+      "NumberOfPages": "73",
+      "IsRadialSearch": false
+    }
+  }
+}

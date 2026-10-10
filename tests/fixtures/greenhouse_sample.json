@@ -1,0 +1,244 @@
+{
+  "jobs": [
+    {
+      "absolute_url": "https://boards.greenhouse.io/spacex/jobs/8643277002?gh_jid=8643277002",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "education": "education_required",
+      "internal_job_id": 6451875002,
+      "location": {
+        "name": "Hawthorne, CA"
+      },
+      "metadata": [
+        {
+          "id": 4010460002,
+          "name": "Employment Type",
+          "value": "Regular",
+          "value_type": "single_select"
+        },
+        {
+          "id": 4026103002,
+          "name": "Discipline",
+          "value": "Corporate - Finance & Accounting",
+          "value_type": "single_select"
+        },
+        {
+          "id": 28070425002,
+          "name": "Program",
+          "value": [
+            "Corporate"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "id": 8643277002,
+      "updated_at": "2026-09-29T17:52:51-04:00",
+      "requisition_id": "6451875002",
+      "title": "Accountant",
+      "company_name": "SpaceX",
+      "first_published": "2026-07-21T19:49:28-04:00",
+      "language": "en",
+      "application_deadline": null
+    },
+    {
+      "absolute_url": "https://boards.greenhouse.io/spacex/jobs/8815850002?gh_jid=8815850002",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "education": "education_required",
+      "internal_job_id": 6451875002,
+      "location": {
+        "name": "Palo Alto, CA"
+      },
+      "metadata": [
+        {
+          "id": 4010460002,
+          "name": "Employment Type",
+          "value": "Regular",
+          "value_type": "single_select"
+        },
+        {
+          "id": 4026103002,
+          "name": "Discipline",
+          "value": "Corporate - Finance & Accounting",
+          "value_type": "single_select"
+        },
+        {
+          "id": 28070425002,
+          "name": "Program",
+          "value": [
+            "Corporate"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "id": 8815850002,
+      "updated_at": "2026-09-29T17:52:51-04:00",
+      "requisition_id": "6451875002",
+      "title": "Accountant",
+      "company_name": "SpaceX",
+      "first_published": "2026-09-16T20:43:28-04:00",
+      "language": "en",
+      "application_deadline": null
+    },
+    {
+      "absolute_url": "https://boards.greenhouse.io/spacex/jobs/8786430002?gh_jid=8786430002",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "education": "education_required",
+      "internal_job_id": 6514991002,
+      "location": {
+        "name": "Palo Alto, CA"
+      },
+      "metadata": [
+        {
+          "id": 4010460002,
+          "name": "Employment Type",
+          "value": "Regular",
+          "value_type": "single_select"
+        },
+        {
+          "id": 4026103002,
+          "name": "Discipline",
+          "value": "Corporate - Finance & Accounting",
+          "value_type": "single_select"
+        },
+        {
+          "id": 28070425002,
+          "name": "Program",
+          "value": [
+            "Corporate"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "id": 8786430002,
+      "updated_at": "2026-10-05T17:53:23-04:00",
+      "requisition_id": "6514991002",
+      "title": "Accountant, AI Operations",
+      "company_name": "SpaceX",
+      "first_published": "2026-09-09T17:28:46-04:00",
+      "language": "en",
+      "application_deadline": null
+    },
+    {
+      "absolute_url": "https://boards.greenhouse.io/spacex/jobs/8585061002?gh_jid=8585061002",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "education": "education_required",
+      "internal_job_id": 6429086002,
+      "location": {
+        "name": "Hawthorne, CA"
+      },
+      "metadata": [
+        {
+          "id": 4010460002,
+          "name": "Employment Type",
+          "value": "Regular",
+          "value_type": "single_select"
+        },
+        {
+          "id": 4026103002,
+          "name": "Discipline",
+          "value": "Corporate - Sales & Business Operations",
+          "value_type": "single_select"
+        },
+        {
+          "id": 28070425002,
+          "name": "Program",
+          "value": [
+            "Starlink"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "id": 8585061002,
+      "updated_at": "2026-09-29T17:52:51-04:00",
+      "requisition_id": "6429086002",
+      "title": "Account Lead, Starlink Strategic Connectivity",
+      "company_name": "SpaceX",
+      "first_published": "2026-06-09T21:01:44-04:00",
+      "language": "en",
+      "application_deadline": null
+    },
+    {
+      "absolute_url": "https://boards.greenhouse.io/spacex/jobs/8594962002?gh_jid=8594962002",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "education": "education_required",
+      "internal_job_id": 6429086002,
+      "location": {
+        "name": "Bastrop, TX"
+      },
+      "metadata": [
+        {
+          "id": 4010460002,
+          "name": "Employment Type",
+          "value": "Regular",
+          "value_type": "single_select"
+        },
+        {
+          "id": 4026103002,
+          "name": "Discipline",
+          "value": "Corporate - Sales & Business Operations",
+          "value_type": "single_select"
+        },
+        {
+          "id": 28070425002,
+          "name": "Program",
+          "value": [
+            "Starlink"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "id": 8594962002,
+      "updated_at": "2026-09-29T17:52:51-04:00",
+      "requisition_id": "6429086002",
+      "title": "Account Lead, Starlink Strategic Connectivity",
+      "company_name": "SpaceX",
+      "first_published": "2026-06-16T17:52:45-04:00",
+      "language": "en",
+      "application_deadline": null
+    }
+  ]
+}
