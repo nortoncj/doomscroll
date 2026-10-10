@@ -1,0 +1,21 @@
+{
+  "include_keywords": [
+    "devops", "devsecops", "cloud", "platform engineer",
+    "site reliability", "sre", "infrastructure",
+    "build engineer", "release engineer",
+    "embedded", "firmware", "iot",
+    "computer engineer", "electronics engineer"
+  ],
+  "exclude_keywords": [
+    "senior", "sr", "staff", "principal", "lead", "manager",
+    "director", "head of", "vp", "architect", "iii", "iv",
+    "intern", "sales", "account executive", "recruiter"
+  ],
+  "locations": [
+    "remote", "anywhere", "telework", "location negotiable",
+    "tampa", "st. petersburg", "clearwater", "largo",
+    "orlando", "melbourne"
+  ],
+  "greenhouse_boards": ["spacex"],
+  "lever_companies": ["palantir"]
+}
