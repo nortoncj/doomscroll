@@ -46,6 +46,7 @@ def test_includes(f, title, expected):
         "Engineering Manager, Infrastructure",
         "Lead Firmware Engineer",
         "Embedded Systems Intern",
+        "SUPERVISORY IT SPECIALIST (INFOSEC)",
         "",
     ],
 )
@@ -55,8 +56,8 @@ def test_rejects(f, title):
 
 @pytest.mark.parametrize(
     "location",
-    ["Tampa, FL", "Remote - US", "St. Petersburg, Florida", "Melbourne, FL","Washington, District of Columbia", "Fort Meade, Maryland",
-"Redstone Arsenal, Alabama", "Cape Canaveral, FL", "MacDill AFB, Florida",
+    ["Tampa, FL", "Remote - US", "St. Petersburg, Florida", "Melbourne, FL","Washington, District of Columbia",     "Washington, DC","Fort Meade, Maryland",
+    "Redstone Arsenal, Alabama", "Cape Canaveral, FL", "MacDill AFB, Florida",
      "Location Negotiable After Selection", ""],
 )
 def test_locations_kept(f, location):
