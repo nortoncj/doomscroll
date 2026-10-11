@@ -17,6 +17,9 @@ Every parser returns the same shape:
 from __future__ import annotations
 
 import json
+import socket
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -40,10 +43,29 @@ class Job(TypedDict):
 # Helpers
 # --------------------------------------------------------------------------
 
+# Retry transient failures: rate limits (429), server errors (5xx), and
+# network blips. Waits 2s, then 5s. A 4xx like 401 or 404 is a real problem
+# with our request, so it fails immediately instead of retrying.
+RETRY_DELAYS_SECONDS = (2, 5)
+_sleep = time.sleep  # swapped out in tests so they don't actually wait
+
+
+def _is_retryable(exc: Exception) -> bool:
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code == 429 or exc.code >= 500
+    return isinstance(exc, (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionError))
+
+
 def _get_json(url: str, headers: dict[str, str] | None = None) -> Any:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
-        return json.load(resp)
+    for attempt in range(len(RETRY_DELAYS_SECONDS) + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
+                return json.load(resp)
+        except Exception as exc:
+            if attempt == len(RETRY_DELAYS_SECONDS) or not _is_retryable(exc):
+                raise
+            _sleep(RETRY_DELAYS_SECONDS[attempt])
 
 
 def _iso(value: Any) -> str:
