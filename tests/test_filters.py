@@ -26,11 +26,11 @@ def f():
         ("Site Reliability Engineer", ["site reliability"]),
         ("Junior Platform Engineer", ["platform engineer"]),
         ("Electronics Engineer", ["electronics engineer"]),
+        ("INFORMATION TECHNOLOGY SPECIALIST (INFOSEC)", ["infosec"]),
     ],
 )
 def test_includes(f, title, expected):
     assert f.match(title, "Tampa, FL") == expected
-
 
 @pytest.mark.parametrize(
     "title",
@@ -55,7 +55,8 @@ def test_rejects(f, title):
 
 @pytest.mark.parametrize(
     "location",
-    ["Tampa, FL", "Remote - US", "St. Petersburg, Florida", "Melbourne, FL",
+    ["Tampa, FL", "Remote - US", "St. Petersburg, Florida", "Melbourne, FL","Washington, District of Columbia", "Fort Meade, Maryland",
+"Redstone Arsenal, Alabama", "Cape Canaveral, FL", "MacDill AFB, Florida",
      "Location Negotiable After Selection", ""],
 )
 def test_locations_kept(f, location):
