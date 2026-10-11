@@ -9,3 +9,9 @@ variable "name_prefix" {
   type        = string
   default     = "doomscroll"
 }
+
+variable "usajobs_email" {
+  description = "Email registered with the USAJobs API. Sent in the User-Agent header. Public, not a secret."
+  type        = string
+  default     = "contact@chrisnortonjr.com"
+}
