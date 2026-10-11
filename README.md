@@ -348,7 +348,7 @@ pytest
 
 ### Definition of done
 
-- [ ] GitHub Actions builds the entire app stack from `main`
+- [x] GitHub Actions builds the entire app stack from `main`
 - [ ] The schedule runs seven consecutive days with no alarms
 - [ ] New matches land in DynamoDB with no duplicates across runs
 - [ ] The digest arrives whenever there are new jobs
