@@ -210,14 +210,19 @@ def parse_usajobs(raw: dict) -> list[Job]:
 # Adzuna (app_id + app_key)
 # --------------------------------------------------------------------------
 
-ADZUNA_KEYWORDS = "devops devsecops cloud sre infrastructure embedded firmware iot"
+# Separate searches so broad marketing terms can't crowd tech results out
+# of the page limit. Name -> (what_or keywords, max pages).
+ADZUNA_SEARCHES = {
+    "tech": ("devops devsecops cloud sre infrastructure embedded firmware iot", 3),
+    "marketing": ("marketing applications content", 2),
+}
 
 
-def fetch_adzuna(app_id: str, app_key: str, page: int = 1, days_old: int = 7) -> dict:
+def fetch_adzuna(app_id: str, app_key: str, keywords: str, page: int = 1, days_old: int = 7) -> dict:
     params = urllib.parse.urlencode({
         "app_id": app_id,
         "app_key": app_key,
-        "what_or": ADZUNA_KEYWORDS,
+        "what_or": keywords,
         "max_days_old": days_old,
         "results_per_page": 50,
     })

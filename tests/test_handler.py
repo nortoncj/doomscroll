@@ -72,7 +72,7 @@ def fakes(monkeypatch):
     monkeypatch.setattr(sources, "fetch_greenhouse", lambda board: GREENHOUSE)
     monkeypatch.setattr(sources, "fetch_lever", lambda company: LEVER)
     monkeypatch.setattr(sources, "fetch_usajobs", lambda key, email: USAJOBS)
-    monkeypatch.setattr(sources, "fetch_adzuna", lambda app_id, app_key, page=1: ADZUNA)
+    monkeypatch.setattr(sources, "fetch_adzuna", lambda app_id, app_key, keywords, page=1: ADZUNA)
     return monkeypatch
 
 
@@ -98,7 +98,7 @@ def test_rerun_inserts_nothing(fakes):
 
 
 def test_failed_source_saves_the_rest_then_raises(fakes, caplog):
-    def broken_adzuna(app_id, app_key, page=1):
+    def broken_adzuna(app_id, app_key, keywords, page=1):
         # Simulate an error message that echoes the request URL with the key in it.
         raise RuntimeError(f"HTTP 500 for ...?app_id={app_id}&app_key={app_key}")
 
@@ -136,3 +136,19 @@ def test_duplicate_job_in_one_run_is_written_once(fakes):
 
     result = handler.lambda_handler({}, None, table=table, get_param=get_param)
     assert result["inserted"] == 3
+
+
+def test_each_adzuna_search_runs_with_its_own_keywords(fakes):
+    calls = []
+
+    def recording_adzuna(app_id, app_key, keywords, page=1):
+        calls.append(keywords)
+        return ADZUNA
+
+    fakes.setattr(sources, "fetch_adzuna", recording_adzuna)
+    table = FakeTable()
+    handler.lambda_handler({}, None, table=table, get_param=get_param)
+
+    assert calls == [keywords for keywords, _ in sources.ADZUNA_SEARCHES.values()]
+    # The same posting from both searches is stored once.
+    assert "adzuna_9001" in table.items

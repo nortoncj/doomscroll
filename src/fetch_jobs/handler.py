@@ -30,7 +30,6 @@ log.setLevel(logging.INFO)
 
 DEFAULT_STATUS = "JustDropped"
 ADZUNA_PAGE_SIZE = 50
-ADZUNA_MAX_PAGES = 3
 
 
 def _now() -> str:
@@ -90,20 +89,21 @@ def collect(f: filters_mod.Filters, get_param: Callable[[str], str], email: str)
         secrets.append(key)
         return sources.parse_usajobs(sources.fetch_usajobs(key, email))
 
-    def adzuna() -> list:
+    def adzuna(keywords: str, max_pages: int) -> list:
         app_id = get_param(ssm_params.ADZUNA_APP_ID)
         app_key = get_param(ssm_params.ADZUNA_APP_KEY)
         secrets.extend([app_id, app_key])
         jobs: list = []
-        for page in range(1, ADZUNA_MAX_PAGES + 1):
-            raw = sources.fetch_adzuna(app_id, app_key, page=page)
+        for page in range(1, max_pages + 1):
+            raw = sources.fetch_adzuna(app_id, app_key, keywords, page=page)
             jobs.extend(sources.parse_adzuna(raw))
             if len(raw.get("results", [])) < ADZUNA_PAGE_SIZE:
                 break
         return jobs
 
     run("usajobs", usajobs)
-    run("adzuna", adzuna)
+    for search, (keywords, max_pages) in sources.ADZUNA_SEARCHES.items():
+        run(f"adzuna:{search}", lambda k=keywords, m=max_pages: adzuna(k, m))
     return matches, report, errors
 
 

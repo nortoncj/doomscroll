@@ -71,7 +71,7 @@ flowchart TD
 | Secrets | SSM Parameter Store | SecureString |
 | Logging | CloudWatch Logs | 14 day retention |
 | Alerting | CloudWatch Alarm | `fetch_jobs` errors >= 1 per day |
-| Cost control | AWS Budgets | Monthly budget with email alerts |
+| Cost guard | AWS Budgets | $5/month |
 | State | S3 backend | Versioned, encrypted, native state locking |
 | Region | us-east-1 | |
 
@@ -116,14 +116,60 @@ Table `jobs`, partition key `job_id` formatted as `{source}_{source_job_id}` (fo
 | `url` | S | |
 | `posted_at` | S | ISO 8601, when provided by the source |
 | `matched_keywords` | L | Keywords that triggered the match |
-| `status` | S | `New`, `Applied`, `Interview`, `Offer`, `Rejected`, `Ghosted` |
+| `status` | S | One of the 7 statuses below. Defaults to `JustDropped` on insert |
+| `clearance_tag` | S | Optional. `clearance_sponsored` on USAJobs postings that list TS/SCI |
 | `first_seen_at` | S | ISO 8601 |
 | `status_updated_at` | S | ISO 8601 |
 | `notes` | S | Optional |
 
 **GSI `status-index`:** partition key `status`, sort key `first_seen_at`. This supports queries like "everything I've applied to, newest first."
 
-`Ghosted` covers applications that never received a response, so they can be closed out without being miscounted as rejections.
+### Job statuses
+
+The statuses are named for fun. Here's what each one means in plain English.
+
+| Status | Means | When it gets set |
+|---|---|---|
+| `JustDropped` | New | Default when the fetcher inserts a job |
+| `Mid` | Not interested | I reviewed it and passed |
+| `ShotMyShot` | Applied | I submitted an application |
+| `TalkingStage` | Interviewing | A recruiter or hiring manager responded |
+| `Curved` | Rejected | They said no |
+| `Ghosted` | No response | No reply after a few weeks |
+| `BagSecured` | Offer | Got an offer |
+
+The `update_status` API rejects anything not in this list with a 400.
+
+### Filtering
+
+Filters live in `config/filters.json` and get bundled with the Lambda.
+
+A job matches if its title contains at least one include keyword and no exclude keyword. Case insensitive.
+
+#### Clearance filter
+
+I'm clearance eligible but don't currently hold one, so postings that need an active TS/SCI are dead on arrival. Postings where I only need to be able to obtain one are exactly the ones I want.
+
+`src/fetch_jobs/clearance.py` checks every sentence that mentions TS/SCI:
+
+| Posting says | Result |
+|---|---|
+| "Active TS/SCI required", "Must possess a current TS/SCI", "Clearance: TS/SCI" | Dropped |
+| "Must be able to obtain a TS/SCI", "Eligible for TS/SCI" | Kept |
+| "Active TS/SCI preferred, ability to obtain required" | Kept |
+| "Ability to obtain TS/SCI" in one line, "Active TS/SCI required" in another | Dropped. Any hard requirement wins |
+
+USAJobs is handled differently. Its structured `SecurityClearance` field means the agency will adjudicate the hire, not that you need to show up cleared. So USAJobs postings are never dropped for clearance. They get a `clearance_tag` of `clearance_sponsored` instead.
+
+**Known limitation:** Adzuna returns truncated descriptions. If the clearance line is past the cutoff, the filter never sees it and the job slips into the digest. Fixing that means fetching every full posting page, which isn't worth the extra requests for v1.
+
+### Digest
+
+Digest is plain text, sent only when at least one job was inserted.
+
+- **Subject:** `Your daily dose of hopium: {n} new matches ({Mon DD})`
+- Duplicates are grouped by title plus company, shown once with a `({count} listings)` suffix
+- **Body, per job:** title, company, location, URL, `job_id`
 
 ---
 
@@ -133,7 +179,7 @@ Table `jobs`, partition key `job_id` formatted as `{source}_{source_job_id}` (fo
 |---|---|
 | IAM (SigV4) auth instead of an API key | No shared secret to leak. Access is tied to an IAM identity and governed by policy. |
 | SSM Parameter Store instead of Secrets Manager | Standard parameters are free. Secrets Manager charges per secret, and rotation isn't needed here. |
-| Secrets set outside Terraform | Parameters are created with a placeholder and `ignore_changes`. Real values never touch Terraform state or git. |
+| Secrets set outside Terraform | Parameters are created with a placeholder and `ignore_changes`. Real values never land in git or any `.tf` file. See [Secrets](#secrets) for how state is handled. |
 | checkov instead of tfsec | tfsec has been folded into Trivy. checkov is actively maintained and has broad AWS coverage. |
 | Flat Terraform files, no modules | One environment, one stack. Modules get introduced when there's something worth reusing. |
 | No Lambda layers | Python standard library plus the boto3 bundled in the runtime keeps packaging simple. |
@@ -163,6 +209,14 @@ Table `jobs`, partition key `job_id` formatted as `{source}_{source_job_id}` (fo
 ```hcl
 #checkov:skip=CKV_AWS_117:Lambda only calls public APIs, no VPC needed
 ```
+
+### Secrets
+
+Terraform creates each parameter with the placeholder `CHANGE_ME` and `lifecycle { ignore_changes = [value] }`. I set the real values once with `aws ssm put-parameter --overwrite`, so real secrets never land in git or in any `.tf` file.
+
+They do end up in Terraform state. On every refresh the AWS provider reads the parameter's current value back into state, and `ignore_changes` only stops Terraform from overwriting it. That's why the state bucket is encrypted, versioned, has public access blocked, and only the CI roles and my identity can read it. Treat the state file as a secret.
+
+My email for the USAJobs User-Agent header and the SNS subscriptions is passed as a sensitive Terraform variable from a gitignored `terraform.tfvars` (locally) or a GitHub Actions secret (in CI).
 
 ---
 
@@ -288,7 +342,7 @@ SNS sends a confirmation email for `job-digest` and `job-alerts`. Click both lin
 ```bash
 awscurl --service execute-api --region us-east-1 -X PATCH \
   -H "Content-Type: application/json" \
-  -d '{"status": "Applied", "notes": "Referred by a former coworker"}' \
+  -d '{"status": "ShotMyShot", "notes": "Referred by a former coworker"}' \
   https://API_ID.execute-api.us-east-1.amazonaws.com/jobs/usajobs_812345
 ```
 
@@ -305,7 +359,7 @@ awscurl --service execute-api --region us-east-1 -X PATCH \
 aws dynamodb query --table-name jobs --index-name status-index \
   --key-condition-expression "#s = :s" \
   --expression-attribute-names '{"#s":"status"}' \
-  --expression-attribute-values '{":s":{"S":"Applied"}}'
+  --expression-attribute-values '{":s":{"S":"ShotMyShot"}}'
 ```
 
 `status` is a DynamoDB reserved word, which is why the query uses an expression attribute name.
@@ -332,7 +386,7 @@ pytest
 
 - **Logs:** CloudWatch log groups are created by Terraform with 14 day retention, so nothing accumulates indefinitely.
 - **Alarm:** Any `fetch_jobs` error within a day triggers an email through `job-alerts`.
-- **Budget:** AWS Budgets sends an email at 80% of actual spend and 100% of forecasted spend.
+- **Budget:** $5/month. Email at 80% actual ($4) and 100% forecasted ($5). Budgets data lags several hours, so this catches slow cost creep. The CloudWatch error alarm is what catches a broken run.
 - **Expected cost:** At or near the AWS free tier at this volume.
 
 ---
@@ -349,11 +403,11 @@ pytest
 ### Definition of done
 
 - [x] GitHub Actions builds the entire app stack from `main`
-- [ ] The schedule runs seven consecutive days with no alarms
-- [ ] New matches land in DynamoDB with no duplicates across runs
-- [ ] The digest arrives whenever there are new jobs
-- [ ] Status updates work through the API, and unsigned calls return 403
-- [ ] checkov passes, with a documented reason for every skip
+- [x] The schedule runs seven consecutive days with no alarms
+- [x] New matches land in DynamoDB with no duplicates across runs
+- [x] The digest arrives whenever there are new jobs
+- [x] Status updates work through the API, and unsigned calls return 403
+- [x] checkov passes, with a documented reason for every skip
 - [ ] The budget alert is active
 - [ ] `terraform destroy` removes everything cleanly
 

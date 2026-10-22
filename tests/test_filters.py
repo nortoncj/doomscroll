@@ -27,6 +27,13 @@ def f():
         ("Junior Platform Engineer", ["platform engineer"]),
         ("Electronics Engineer", ["electronics engineer"]),
         ("INFORMATION TECHNOLOGY SPECIALIST (INFOSEC)", ["infosec"]),
+        ("Technical Content Writer", ["technical content"]),
+        ("Technical Marketing Specialist", ["technical marketing"]),
+        ("Product Marketing Coordinator", ["product marketing"]),
+        ("Product Marketing Specialist", ["product marketing"]),
+        ("Marketing Analyst", ["marketing analyst"]),
+        ("Applications Engineer", ["applications engineer"]),
+        ("Field Application Engineer", ["application engineer"]),
     ],
 )
 def test_includes(f, title, expected):
@@ -47,6 +54,10 @@ def test_includes(f, title, expected):
         "Lead Firmware Engineer",
         "Embedded Systems Intern",
         "SUPERVISORY IT SPECIALIST (INFOSEC)",
+        "Product Marketing Manager",
+        "Senior Marketing Analyst",
+        "Sales Applications Engineer",
+        "Marketing Coordinator",
         "",
     ],
 )
