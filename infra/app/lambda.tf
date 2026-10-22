@@ -39,13 +39,13 @@ resource "aws_cloudwatch_log_group" "fetch_jobs" {
 
 resource "aws_lambda_function" "fetch_jobs" {
   #checkov:skip=CKV_AWS_117:Only calls public HTTPS APIs, DynamoDB, and SSM. A VPC would add a NAT gateway (~$32/month) for no security gain.
-  #checkov:skip=CKV_AWS_116:Runs on a schedule, not from a queue. Failures raise and trip the CloudWatch alarm (M3), and the next day's run retries.
+  #checkov:skip=CKV_AWS_116:Runs on a schedule, not from a queue. Failures raise and trip the CloudWatch alarm, and the next day's run retries.
   #checkov:skip=CKV_AWS_115:Reserved concurrency fails on new accounts with a 10 execution limit. One scheduled invocation per day can't run away.
-  #checkov:skip=CKV_AWS_173:Environment variables hold a table name, an SSM path, and a public email. Secrets live in SSM.
+  #checkov:skip=CKV_AWS_173:Environment variables hold a table name, an SSM path, a topic ARN, an API URL, and a public email. Secrets live in SSM.
   #checkov:skip=CKV_AWS_272:Code is built and deployed only by the CI apply role from reviewed commits on main. Code signing adds a signing profile for no extra protection here.
   #checkov:skip=CKV_AWS_50:X-Ray tracing isn't needed for a single daily invocation. Structured logs cover debugging.
   function_name    = local.fetch_jobs_name
-  description      = "Daily job fetch: pulls 4 sources, filters, and inserts new matches."
+  description      = "Daily job fetch: pulls 4 sources, filters, inserts new matches, sends the digest."
   role             = aws_iam_role.fetch_jobs.arn
   runtime          = "python3.12"
   handler          = "handler.lambda_handler"
@@ -56,11 +56,12 @@ resource "aws_lambda_function" "fetch_jobs" {
 
   environment {
     variables = {
-      TABLE_NAME    = aws_dynamodb_table.jobs.name
-      SSM_PREFIX    = "/${var.name_prefix}"
-      USAJOBS_EMAIL = var.notification_email
-
+      TABLE_NAME       = aws_dynamodb_table.jobs.name
+      SSM_PREFIX       = "/${var.name_prefix}"
+      USAJOBS_EMAIL    = var.notification_email
       DIGEST_TOPIC_ARN = aws_sns_topic.job_digest.arn
+      # Puts a copy and paste awscurl command in the digest footer.
+      API_URL = aws_apigatewayv2_api.jobs.api_endpoint
     }
   }
 

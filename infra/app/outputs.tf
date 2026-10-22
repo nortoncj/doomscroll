@@ -18,3 +18,7 @@ output "digest_topic_arn" {
 output "alerts_topic_arn" {
   value = aws_sns_topic.job_alerts.arn
 }
+
+output "api_endpoint" {
+  value = aws_apigatewayv2_api.jobs.api_endpoint
+}
