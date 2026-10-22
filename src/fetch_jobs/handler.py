@@ -2,15 +2,16 @@
 
 Flow:
   1. Load filters (filters.json is bundled next to this file).
-  2. For each source: fetch, parse, filter. One source failing never
-     stops the others.
+  2. For each source: fetch, parse, filter (keywords, location, then the
+     TS/SCI clearance filter). One source failing never stops the others.
   3. Conditional write each match. A job that already exists is skipped,
      so reruns are safe and only genuinely new jobs count as inserted.
-  4. Log a one-line JSON summary.
-  5. If any source failed, raise at the very end so the CloudWatch alarm
-     fires. Jobs from the working sources are already saved by then.
-
-The digest email (SNS) lands in M3. For now the summary goes to the logs.
+  4. If anything was inserted, publish the digest to SNS. Zero new jobs
+     means zero emails.
+  5. Log a one-line JSON summary.
+  6. If any source (or the digest) failed, raise at the very end so the
+     CloudWatch alarm fires. Jobs from the working sources are already
+     saved by then.
 """
 
 from __future__ import annotations
@@ -21,6 +22,8 @@ import os
 from datetime import datetime, timezone
 from typing import Any, Callable
 
+import clearance
+import digest
 import filters as filters_mod
 import sources
 import ssm_params
@@ -30,7 +33,6 @@ log.setLevel(logging.INFO)
 
 DEFAULT_STATUS = "JustDropped"
 ADZUNA_PAGE_SIZE = 50
-ADZUNA_MAX_PAGES = 3
 
 
 def _now() -> str:
@@ -48,6 +50,17 @@ def _redact(text: str, secrets: list[str]) -> str:
 def _error_code(exc: Exception) -> str:
     # botocore's ClientError carries the AWS error code in .response.
     return (getattr(exc, "response", None) or {}).get("Error", {}).get("Code", "")
+
+
+def passes_clearance(job: dict[str, Any]) -> bool:
+    """Drop jobs that need an already held TS/SCI.
+
+    USAJobs never gets dropped here. Its parser tags clearance instead,
+    because on fed postings TS/SCI usually means they sponsor it.
+    """
+    if job.get("source") == "usajobs":
+        return True
+    return not clearance.requires_active_clearance(job.get("title", ""), job.get("description", ""))
 
 
 def collect(f: filters_mod.Filters, get_param: Callable[[str], str], email: str):
@@ -68,11 +81,18 @@ def collect(f: filters_mod.Filters, get_param: Callable[[str], str], email: str)
             log.warning(json.dumps({"event": "source_failed", "source": name, "error": errors[name]}))
             return
         kept = []
+        dropped_clearance = 0
         for job in jobs:
             keywords = f.match(job["title"], job["location"])
-            if keywords:
-                kept.append({**job, "matched_keywords": keywords})
+            if not keywords:
+                continue
+            if not passes_clearance(job):
+                dropped_clearance += 1
+                continue
+            kept.append({**job, "matched_keywords": keywords})
         report[name] = {"fetched": len(jobs), "matched": len(kept)}
+        if dropped_clearance:
+            report[name]["dropped_clearance"] = dropped_clearance
         matches.extend(kept)
 
     for board in f.greenhouse_boards:
@@ -90,20 +110,21 @@ def collect(f: filters_mod.Filters, get_param: Callable[[str], str], email: str)
         secrets.append(key)
         return sources.parse_usajobs(sources.fetch_usajobs(key, email))
 
-    def adzuna() -> list:
+    def adzuna(keywords: str, max_pages: int) -> list:
         app_id = get_param(ssm_params.ADZUNA_APP_ID)
         app_key = get_param(ssm_params.ADZUNA_APP_KEY)
         secrets.extend([app_id, app_key])
         jobs: list = []
-        for page in range(1, ADZUNA_MAX_PAGES + 1):
-            raw = sources.fetch_adzuna(app_id, app_key, page=page)
+        for page in range(1, max_pages + 1):
+            raw = sources.fetch_adzuna(app_id, app_key, keywords, page=page)
             jobs.extend(sources.parse_adzuna(raw))
             if len(raw.get("results", [])) < ADZUNA_PAGE_SIZE:
                 break
         return jobs
 
     run("usajobs", usajobs)
-    run("adzuna", adzuna)
+    for search, (keywords, max_pages) in sources.ADZUNA_SEARCHES.items():
+        run(f"adzuna:{search}", lambda k=keywords, m=max_pages: adzuna(k, m))
     return matches, report, errors
 
 
@@ -115,7 +136,9 @@ def store(matches: list[dict[str, Any]], table, now: str) -> list[dict[str, Any]
         if job["job_id"] in seen:
             continue
         seen.add(job["job_id"])
-        item = {**job, "status": DEFAULT_STATUS, "first_seen_at": now, "status_updated_at": now}
+        # description is only for filtering. Don't pay to store it.
+        item = {k: v for k, v in job.items() if k != "description"}
+        item.update(status=DEFAULT_STATUS, first_seen_at=now, status_updated_at=now)
         try:
             table.put_item(Item=item, ConditionExpression="attribute_not_exists(job_id)")
         except Exception as exc:
@@ -132,12 +155,41 @@ def _default_table():
     return boto3.resource("dynamodb").Table(os.environ["TABLE_NAME"])
 
 
-def lambda_handler(event, context, table=None, get_param=None):
+def _default_sns():
+    import boto3  # bundled in the Lambda runtime; imported lazily for tests
+
+    return boto3.client("sns")
+
+
+def send_digest(inserted: list[dict[str, Any]], errors: dict[str, str], sns=None) -> bool:
+    """Publish the digest if there's anything new. Returns True if sent.
+
+    A failed publish is recorded in errors (so the alarm fires) instead of
+    raising, because the jobs are already saved and won't count as new on
+    the next run.
+    """
+    topic_arn = os.environ.get("DIGEST_TOPIC_ARN", "")
+    if not inserted:
+        return False
+    if not topic_arn:
+        log.warning(json.dumps({"event": "digest_skipped", "reason": "DIGEST_TOPIC_ARN not set"}))
+        return False
+    try:
+        digest.publish_digest(sns or _default_sns(), topic_arn, inserted, datetime.now(timezone.utc))
+    except Exception as exc:  # noqa: BLE001 - jobs are saved; alarm on it, don't lose the summary
+        errors["digest"] = f"{type(exc).__name__}: {exc}"
+        log.error(json.dumps({"event": "digest_failed", "error": errors["digest"]}))
+        return False
+    return True
+
+
+def lambda_handler(event, context, table=None, get_param=None, sns=None):
     f = filters_mod.load_filters()
     matches, report, errors = collect(
         f, get_param or ssm_params.get_param, os.environ.get("USAJOBS_EMAIL", "")
     )
     inserted = store(matches, table or _default_table(), _now())
+    digest_sent = send_digest(inserted, errors, sns)
 
     summary = {
         "event": "fetch_complete",
@@ -145,6 +197,7 @@ def lambda_handler(event, context, table=None, get_param=None):
         "errors": errors,
         "matched": len(matches),
         "inserted": len(inserted),
+        "digest_sent": digest_sent,
         "new_jobs": [
             {"job_id": j["job_id"], "title": j["title"], "company": j["company"]} for j in inserted
         ],

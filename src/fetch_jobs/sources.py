@@ -12,18 +12,28 @@ Every parser returns the same shape:
   source     "greenhouse" | "lever" | "usajobs" | "adzuna"
   title, company, location, url
   posted_at  ISO 8601 string, or "" if the source didn't give one
+
+Two optional keys, used during filtering only:
+  description   plain text, for the TS/SCI clearance filter. The handler
+                strips it before writing to DynamoDB.
+  clearance_tag USAJobs only: "clearance_sponsored" when the posting lists
+                TS/SCI. Stored, and shown in the digest.
 """
 
 from __future__ import annotations
 
+import html
 import json
+import re
 import socket
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
-from typing import Any, TypedDict
+from typing import Any, NotRequired, TypedDict
+
+import clearance
 
 TIMEOUT_SECONDS = 20
 USER_AGENT = "doomscroll/1.0 (personal job tracker)"
@@ -37,6 +47,8 @@ class Job(TypedDict):
     location: str
     url: str
     posted_at: str
+    description: NotRequired[str]
+    clearance_tag: NotRequired[str]
 
 
 # --------------------------------------------------------------------------
@@ -87,6 +99,21 @@ def _iso(value: Any) -> str:
             return text
 
 
+_TAG = re.compile(r"<[^>]+>")
+
+
+def _plain(text: Any) -> str:
+    """HTML (even double escaped, like Greenhouse) to plain text.
+
+    Tags become newlines so the clearance filter still sees separate
+    sentences instead of one giant run on line.
+    """
+    if not text:
+        return ""
+    text = html.unescape(html.unescape(str(text)))
+    return html.unescape(_TAG.sub("\n", text)).strip()
+
+
 def _job_id(source: str, raw_id: Any) -> str:
     # Slashes would break PATCH /jobs/{job_id}, so swap them out.
     return f"{source}_{str(raw_id).strip().replace('/', '-')}"
@@ -97,7 +124,10 @@ def _job_id(source: str, raw_id: Any) -> str:
 # --------------------------------------------------------------------------
 
 def fetch_greenhouse(board: str) -> dict:
-    return _get_json(f"https://boards-api.greenhouse.io/v1/boards/{urllib.parse.quote(board)}/jobs")
+    # content=true adds the job description, which the clearance filter needs.
+    return _get_json(
+        f"https://boards-api.greenhouse.io/v1/boards/{urllib.parse.quote(board)}/jobs?content=true"
+    )
 
 
 def parse_greenhouse(raw: dict, board: str = "") -> list[Job]:
@@ -113,6 +143,7 @@ def parse_greenhouse(raw: dict, board: str = "") -> list[Job]:
             location=((item.get("location") or {}).get("name") or "").strip(),
             url=item.get("absolute_url", ""),
             posted_at=_iso(item.get("first_published") or item.get("updated_at")),
+            description=_plain(item.get("content")),
         ))
     return jobs
 
@@ -144,6 +175,12 @@ def parse_lever(raw: list, company: str = "") -> list[Job]:
             location=location,
             url=item.get("hostedUrl", ""),
             posted_at=_iso(item.get("createdAt")),
+            # Clearance lines usually live in the requirements lists.
+            description="\n".join(filter(None, [
+                item.get("descriptionPlain") or "",
+                *(f"{lst.get('text', '')}\n{_plain(lst.get('content'))}" for lst in item.get("lists") or []),
+                item.get("additionalPlain") or "",
+            ])).strip(),
         ))
     return jobs
 
@@ -194,7 +231,7 @@ def parse_usajobs(raw: dict) -> list[Job]:
         if details.get("RemoteIndicator") and "remote" not in location.lower():
             location = f"Remote; {location}" if location else "Remote"
 
-        jobs.append(Job(
+        job = Job(
             job_id=_job_id("usajobs", raw_id),
             source="usajobs",
             title=title,
@@ -202,7 +239,13 @@ def parse_usajobs(raw: dict) -> list[Job]:
             location=location,
             url=url,
             posted_at=_iso(d.get("PublicationStartDate")),
-        ))
+        )
+        # Never drop USAJobs on clearance: on fed postings TS/SCI means the
+        # agency adjudicates you after the offer. Tag it instead.
+        tag = clearance.usajobs_clearance_tag(details.get("SecurityClearance"))
+        if tag:
+            job["clearance_tag"] = tag
+        jobs.append(job)
     return jobs
 
 
@@ -210,14 +253,19 @@ def parse_usajobs(raw: dict) -> list[Job]:
 # Adzuna (app_id + app_key)
 # --------------------------------------------------------------------------
 
-ADZUNA_KEYWORDS = "devops devsecops cloud sre infrastructure embedded firmware iot"
+# Separate searches so broad marketing terms can't crowd tech results out
+# of the page limit. Name -> (what_or keywords, max pages).
+ADZUNA_SEARCHES = {
+    "tech": ("devops devsecops cloud sre infrastructure embedded firmware iot", 3),
+    "marketing": ("marketing applications content", 2),
+}
 
 
-def fetch_adzuna(app_id: str, app_key: str, page: int = 1, days_old: int = 7) -> dict:
+def fetch_adzuna(app_id: str, app_key: str, keywords: str, page: int = 1, days_old: int = 7) -> dict:
     params = urllib.parse.urlencode({
         "app_id": app_id,
         "app_key": app_key,
-        "what_or": ADZUNA_KEYWORDS,
+        "what_or": keywords,
         "max_days_old": days_old,
         "results_per_page": 50,
     })
@@ -237,5 +285,7 @@ def parse_adzuna(raw: dict) -> list[Job]:
             location=((item.get("location") or {}).get("display_name") or "").strip(),
             url=item.get("redirect_url", ""),
             posted_at=_iso(item.get("created")),
+            # Truncated by Adzuna. A clearance line past the cutoff is missed.
+            description=_plain(item.get("description")),
         ))
     return jobs
