@@ -58,7 +58,7 @@ resource "aws_lambda_function" "fetch_jobs" {
     variables = {
       TABLE_NAME    = aws_dynamodb_table.jobs.name
       SSM_PREFIX    = "/${var.name_prefix}"
-      USAJOBS_EMAIL = var.usajobs_email
+      USAJOBS_EMAIL = var.notification_email
     }
   }
 

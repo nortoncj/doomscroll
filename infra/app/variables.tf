@@ -10,8 +10,15 @@ variable "name_prefix" {
   default     = "doomscroll"
 }
 
-variable "usajobs_email" {
-  description = "Email registered with the USAJobs API. Sent in the User-Agent header. Public, not a secret."
+variable "notification_email" {
+  description = "My email. Sent in the USAJobs User-Agent header and used for the SNS subscriptions. Comes from a gitignored terraform.tfvars locally, or the NOTIFICATION_EMAIL repo secret in CI."
   type        = string
-  default     = "contact@chrisnortonjr.com"
+  sensitive   = true
+
+  # A missing repo secret arrives as an empty string. Fail the plan instead
+  # of deploying a Lambda with no contact email.
+  validation {
+    condition     = can(regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", var.notification_email))
+    error_message = "notification_email must be a valid email address. Check the NOTIFICATION_EMAIL secret or terraform.tfvars."
+  }
 }
