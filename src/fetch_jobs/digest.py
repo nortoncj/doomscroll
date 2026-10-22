@@ -9,6 +9,7 @@ Grouping: the same title at the same company shows up once, with a
 
 from __future__ import annotations
 
+import os
 from datetime import datetime
 from typing import Any
 
@@ -47,6 +48,16 @@ def _entry(index: int, group: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
+def _footer(example_id: str) -> str:
+    """A copy and paste awscurl command. API_URL comes from Terraform."""
+    api = os.environ.get("API_URL", "").rstrip("/") or "<api>"
+    return (
+        "\nUpdate a status (JustDropped, Mid, ShotMyShot, TalkingStage, Curved, Ghosted, BagSecured):\n"
+        f"awscurl --service execute-api --region us-east-1 -X PATCH {api}/jobs/{example_id} "
+        "-H 'Content-Type: application/json' -d '{\"status\": \"ShotMyShot\"}'\n"
+    )
+
+
 def build_digest(jobs: list[dict[str, Any]], now: datetime) -> tuple[str, str]:
     """Return (subject, body). Call only when jobs is non empty.
 
@@ -62,10 +73,7 @@ def build_digest(jobs: list[dict[str, Any]], now: datetime) -> tuple[str, str]:
     )
 
     header = f"{n} new {'match' if n == 1 else 'matches'}. Go shoot your shot.\n"
-    footer = (
-        "\nUpdate a status:\n"
-        "awscurl --service execute-api -X PATCH <api>/jobs/<id> -d '{\"status\": \"ShotMyShot\"}'\n"
-    )
+    footer = _footer(groups[0][0]["job_id"])
 
     parts = [header]
     size = len(header.encode()) + len(footer.encode())
