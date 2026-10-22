@@ -24,9 +24,16 @@ resource "aws_dynamodb_table" "jobs" {
   # "Show me everything I've applied to, newest first."
   global_secondary_index {
     name            = "status-index"
-    hash_key        = "status"
-    range_key       = "first_seen_at"
-    projection_type = "ALL"
+    projection_type = "ALL" # keep whatever you already have here
+
+    key_schema {
+      attribute_name = "status"
+      key_type       = "HASH"
+    }
+    key_schema {
+      attribute_name = "first_seen_at"
+      key_type       = "RANGE"
+    }
   }
 
   # Continuous backups for 35 days. Costs pennies at this size and
@@ -34,6 +41,4 @@ resource "aws_dynamodb_table" "jobs" {
   point_in_time_recovery {
     enabled = true
   }
-
-
 }

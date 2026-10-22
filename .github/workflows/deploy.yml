@@ -16,6 +16,8 @@ concurrency:
 env:
   AWS_REGION: us-east-1
   ROLE_ARN: arn:aws:iam::205207086306:role/ci-doomscroll-apply
+  # Must match pr.yml, or a PR that planned fine fails at apply after merge.
+  TF_VAR_notification_email: ${{ secrets.NOTIFICATION_EMAIL }}
 
 jobs:
   deploy:
@@ -33,16 +35,23 @@ jobs:
           python-version: "3.12"
 
       - name: Install checkov and pytest
-        run: pip install checkov pytest
+        run: pip install -r requirements-dev.txt
+
+      # Cheap checks first, with no AWS credentials in the environment.
+      - name: terraform fmt
+        run: terraform fmt -check -recursive infra
+
+      - name: pytest
+        run: pytest -ra
+
+      - name: checkov
+        run: checkov -d infra --compact
 
       - name: Assume ci-doomscroll-apply via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ env.ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
-
-      - name: terraform fmt
-        run: terraform fmt -check -recursive infra
 
       - name: terraform init
         working-directory: infra/app
@@ -51,12 +60,6 @@ jobs:
       - name: terraform validate
         working-directory: infra/app
         run: terraform validate
-
-      - name: checkov
-        run: checkov -d infra --compact
-
-      - name: pytest
-        run: pytest || [ $? -eq 5 ]
 
       # Save the plan, then apply exactly that plan. Same habit you used locally.
       - name: terraform plan
