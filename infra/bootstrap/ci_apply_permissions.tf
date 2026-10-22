@@ -134,6 +134,14 @@ data "aws_iam_policy_document" "ci_apply" {
     ]
   }
 
+  # default_tags puts tags on every API Gateway resource, and stages need an
+  # explicit TagResource permission. API IDs are random, so scope to the region.
+  statement {
+    sid       = "ApiGatewayTagging"
+    actions   = ["apigateway:TagResource", "apigateway:UntagResource"]
+    resources = ["arn:aws:apigateway:${local.region}::/*"]
+  }
+
   statement {
     sid       = "SSMParameters"
     actions   = ["ssm:*"]
