@@ -72,7 +72,7 @@ def fakes(monkeypatch):
     monkeypatch.setattr(sources, "fetch_greenhouse", lambda board: GREENHOUSE)
     monkeypatch.setattr(sources, "fetch_lever", lambda company: LEVER)
     monkeypatch.setattr(sources, "fetch_usajobs", lambda key, email: USAJOBS)
-    monkeypatch.setattr(sources, "fetch_adzuna", lambda app_id, app_key, page=1: ADZUNA)
+    monkeypatch.setattr(sources, "fetch_adzuna", lambda app_id, app_key, keywords, page=1: ADZUNA)
     return monkeypatch
 
 
@@ -98,7 +98,7 @@ def test_rerun_inserts_nothing(fakes):
 
 
 def test_failed_source_saves_the_rest_then_raises(fakes, caplog):
-    def broken_adzuna(app_id, app_key, page=1):
+    def broken_adzuna(app_id, app_key, keywords, page=1):
         # Simulate an error message that echoes the request URL with the key in it.
         raise RuntimeError(f"HTTP 500 for ...?app_id={app_id}&app_key={app_key}")
 

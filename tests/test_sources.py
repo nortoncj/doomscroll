@@ -9,6 +9,7 @@ import sources
 
 FIXTURES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 REQUIRED = ("job_id", "source", "title", "company", "location", "url", "posted_at")
+OPTIONAL = ("description", "clearance_tag")
 
 
 def load(name):
@@ -29,7 +30,7 @@ def test_every_job_has_the_shared_shape(source):
     jobs = PARSED[source]
     assert jobs, f"{source} parser returned nothing"
     for job in jobs:
-        assert set(job) == set(REQUIRED)
+        assert set(REQUIRED) <= set(job) <= set(REQUIRED + OPTIONAL)
         assert job["source"] == source
         assert job["job_id"].startswith(f"{source}_")
         assert "/" not in job["job_id"]

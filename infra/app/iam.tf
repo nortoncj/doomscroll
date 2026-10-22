@@ -68,6 +68,13 @@ data "aws_iam_policy_document" "fetch_jobs" {
     }
   }
 
+  # Publish the digest. Only this one topic.
+  statement {
+    sid       = "PublishDigest"
+    actions   = ["sns:Publish"]
+    resources = [aws_sns_topic.job_digest.arn]
+  }
+
   # Write to its own log group. Terraform creates the group, so no
   # logs:CreateLogGroup here.
   statement {
