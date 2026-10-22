@@ -1,0 +1,4 @@
+# CI tooling, pinned so a new upstream release can't turn the build red on its own.
+# Bump these on purpose, in their own PR.
+checkov==3.3.26
+pytest==9.1.1
