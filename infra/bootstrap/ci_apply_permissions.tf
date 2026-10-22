@@ -20,6 +20,7 @@ locals {
     sns       = "arn:aws:sns:${local.region}:${local.account_id}:${local.prefix}-*"
     ssm       = "arn:aws:ssm:${local.region}:${local.account_id}:parameter/${local.prefix}/*"
     logs      = "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/lambda/${local.prefix}-*"
+    api_logs  = "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/apigateway/${local.prefix}-*"
     alarm     = "arn:aws:cloudwatch:${local.region}:${local.account_id}:alarm:${local.prefix}-*"
     scheduler = "arn:aws:scheduler:${local.region}:${local.account_id}:schedule/*/${local.prefix}-*"
     budget    = "arn:aws:budgets::${local.account_id}:budget/${local.prefix}-*"
@@ -149,9 +150,29 @@ data "aws_iam_policy_document" "ci_apply" {
   }
 
   statement {
-    sid       = "LogGroups"
-    actions   = ["logs:*"]
-    resources = [local.arn_prefix.logs, "${local.arn_prefix.logs}:*"]
+    sid     = "LogGroups"
+    actions = ["logs:*"]
+    resources = [
+      local.arn_prefix.logs, "${local.arn_prefix.logs}:*",
+      local.arn_prefix.api_logs, "${local.arn_prefix.api_logs}:*",
+    ]
+  }
+
+  # HTTP API access logging goes through CloudWatch Logs log delivery. AWS
+  # requires these on whoever configures the stage, and none of them
+  # support resource scoping.
+  statement {
+    sid = "ApiAccessLogDelivery"
+    actions = [
+      "logs:CreateLogDelivery",
+      "logs:GetLogDelivery",
+      "logs:UpdateLogDelivery",
+      "logs:DeleteLogDelivery",
+      "logs:ListLogDeliveries",
+      "logs:PutResourcePolicy",
+      "logs:DescribeResourcePolicies",
+    ]
+    resources = ["*"]
   }
 
   # These Describe calls don't support resource scoping. AWS requires "*".
