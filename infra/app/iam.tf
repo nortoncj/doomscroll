@@ -89,3 +89,36 @@ resource "aws_iam_role_policy" "fetch_jobs" {
   role   = aws_iam_role.fetch_jobs.id
   policy = data.aws_iam_policy_document.fetch_jobs.json
 }
+
+# ---------------------------------------------------------------------------
+# update_status
+# ---------------------------------------------------------------------------
+
+resource "aws_iam_role" "update_status" {
+  name                 = "${var.name_prefix}-update-status"
+  description          = "Runtime role for the status update API Lambda."
+  assume_role_policy   = data.aws_iam_policy_document.lambda_trust.json
+  permissions_boundary = local.boundary_arn
+}
+
+data "aws_iam_policy_document" "update_status" {
+  # Update existing jobs only. The conditional update in code means it can
+  # never create one, and it can't read, insert, or delete.
+  statement {
+    sid       = "UpdateJobs"
+    actions   = ["dynamodb:UpdateItem"]
+    resources = [aws_dynamodb_table.jobs.arn]
+  }
+
+  statement {
+    sid       = "WriteOwnLogs"
+    actions   = ["logs:CreateLogStream", "logs:PutLogEvents"]
+    resources = ["${aws_cloudwatch_log_group.update_status.arn}:*"]
+  }
+}
+
+resource "aws_iam_role_policy" "update_status" {
+  name   = "update-status-runtime"
+  role   = aws_iam_role.update_status.id
+  policy = data.aws_iam_policy_document.update_status.json
+}
